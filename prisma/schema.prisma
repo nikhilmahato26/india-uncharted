@@ -1,0 +1,1073 @@
+// India Uncharted — data model. See IMPLEMENTATION_PLAN.md §3.
+// Rules: relational first; JSON only for Tiptap documents and Zod-validated section props;
+// no table stores an image URL except Media; every ordered collection has sortOrder.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ──────────────────────────────────────────────────────────────────
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum EntityType {
+  PAGE
+  REGION
+  DESTINATION
+  JOURNEY
+  EXPERIENCE
+  SERVICE
+  ARTICLE
+  CATEGORY
+}
+
+enum DestinationType {
+  STATE
+  CITY
+  TOWN
+  NATIONAL_PARK
+  WILDLIFE_SANCTUARY
+  VALLEY
+  LAKE
+  VILLAGE
+  REGION_AREA
+}
+
+enum HighlightKind {
+  PLACE_TO_VISIT
+  THING_TO_DO
+  BEYOND_OBVIOUS
+  FOOD
+  LOCAL_EXPERIENCE
+}
+
+enum JourneyKind {
+  JOURNEY
+  RETREAT
+  COURSE
+  BIKE_TOUR
+}
+
+enum Difficulty {
+  EASY
+  MODERATE
+  CHALLENGING
+  EXPERT
+}
+
+enum ExperienceFormat {
+  WALKING
+  FOOD_WALK
+  CYCLING
+  SIGHTSEEING
+  DESERT_EVENING
+  OTHER
+}
+
+enum ArticleKind {
+  BLOG
+  GUIDE
+}
+
+enum CategoryType {
+  TRAVEL_STYLE
+  EXPERIENCE_THEME
+  ARTICLE_CATEGORY
+  FAQ_CATEGORY
+}
+
+enum MediaLicence {
+  OWNED
+  LICENSED
+  UNKNOWN
+}
+
+enum MediaRole {
+  HERO
+  GALLERY
+  OG
+  INLINE
+  CARD
+}
+
+enum RelationOrigin {
+  MANUAL
+  SUGGESTED
+}
+
+enum SectionType {
+  HERO
+  RICH_TEXT
+  IMAGE_TEXT
+  GALLERY
+  EDITORIAL_QUOTE
+  CARD_GRID
+  DESTINATION_GRID
+  JOURNEY_GRID
+  EXPERIENCE_GRID
+  SERVICE_GRID
+  ARTICLE_GRID
+  REGION_CAROUSEL
+  INDIA_MAP
+  FAQ
+  TESTIMONIALS
+  CTA
+  VIDEO
+  MAP_EMBED
+  STATS
+  NEWSLETTER
+  TABLE
+  CALLOUT
+  HTML_SAFE
+}
+
+enum MetaAttribute {
+  NAME
+  PROPERTY
+  HTTP_EQUIV
+}
+
+enum TestimonialSource {
+  DIRECT
+  GOOGLE
+  TRIPADVISOR
+  OTHER
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  CONFIRMED
+  COMPLETED
+  LOST
+}
+
+enum EnquiryChannel {
+  FORM
+  WHATSAPP_CLICK
+  PHONE_CLICK
+}
+
+enum BudgetBand {
+  UNDECIDED
+  ESSENTIAL
+  COMFORT
+  PREMIUM
+  LUXURY
+}
+
+enum SubscriberStatus {
+  PENDING
+  CONFIRMED
+  UNSUBSCRIBED
+}
+
+enum NoticeScope {
+  GLOBAL
+  REGION
+  DESTINATION
+  JOURNEY
+  EXPERIENCE
+}
+
+enum RedirectOrigin {
+  MIGRATION
+  SLUG_CHANGE
+  MANUAL
+}
+
+enum NavKind {
+  LINK
+  MEGA
+  CTA
+  HEADING
+}
+
+// ─── People & audit ─────────────────────────────────────────────────────────
+
+model User {
+  id                String    @id @default(cuid())
+  email             String    @unique // stored lower-cased
+  name              String
+  passwordHash      String
+  role              Role      @default(EDITOR)
+  isActive          Boolean   @default(true)
+  lastLoginAt       DateTime? @db.Timestamptz
+  /// Tokens issued (iat) before this instant are rejected. Whole seconds.
+  sessionsValidFrom DateTime  @default(now()) @db.Timestamptz
+  createdAt         DateTime  @default(now()) @db.Timestamptz
+  updatedAt         DateTime  @updatedAt @db.Timestamptz
+
+  auditLogs        AuditLog[]
+  enquiryNotes     EnquiryNote[]
+  assignedEnquiries Enquiry[]   @relation("EnquiryAssignee")
+  verifiedTestimonials Testimonial[] @relation("TestimonialVerifier")
+}
+
+model AuditLog {
+  id         String      @id @default(cuid())
+  userId     String?
+  user       User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String // create | update | delete | publish | unpublish | archive | reorder | login …
+  entityType String
+  entityId   String?
+  label      String? // human-readable name at the time
+  diff       Json?
+  createdAt  DateTime    @default(now()) @db.Timestamptz
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+// ─── Media ──────────────────────────────────────────────────────────────────
+
+model Media {
+  id          String       @id @default(cuid())
+  provider    String // local | cloudinary
+  publicId    String       @unique
+  url         String
+  width       Int
+  height      Int
+  format      String
+  bytes       Int
+  blurDataUrl String?
+  sha256      String?      @unique
+  altText     String       @default("")
+  title       String?
+  caption     String?
+  description String?
+  credit      String?
+  licence     MediaLicence @default(UNKNOWN)
+  folder      String       @default("uploads")
+  sourceUrl   String? // where it was imported from (migration provenance)
+  createdAt   DateTime     @default(now()) @db.Timestamptz
+  updatedAt   DateTime     @updatedAt @db.Timestamptz
+
+  usages MediaUsage[]
+
+  regionHeroes      Region[]      @relation("RegionHero")
+  destinationHeroes Destination[] @relation("DestinationHero")
+  highlightImages   DestinationHighlight[]
+  journeyHeroes     Journey[]     @relation("JourneyHero")
+  experienceHeroes  Experience[]  @relation("ExperienceHero")
+  serviceHeroes     Service[]     @relation("ServiceHero")
+  articleHeroes     Article[]     @relation("ArticleHero")
+  categoryHeroes    Category[]    @relation("CategoryHero")
+  pageHeroes        Page[]        @relation("PageHero")
+  vehicles          Vehicle[]
+  authors           Author[]
+  testimonials      Testimonial[]
+  seoOg             SeoMeta[]     @relation("SeoOgImage")
+  seoTwitter        SeoMeta[]     @relation("SeoTwitterImage")
+  settingsLogo      SiteSettings[] @relation("SettingsLogo")
+  settingsLogoLight SiteSettings[] @relation("SettingsLogoLight")
+  settingsFavicon   SiteSettings[] @relation("SettingsFavicon")
+  settingsOg        SiteSettings[] @relation("SettingsOg")
+
+  @@index([folder])
+  @@index([licence])
+}
+
+model MediaUsage {
+  id         String     @id @default(cuid())
+  mediaId    String
+  media      Media      @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+  entityType EntityType
+  entityId   String
+  role       MediaRole  @default(GALLERY)
+  sortOrder  Int        @default(0)
+
+  @@unique([entityType, entityId, mediaId, role])
+  @@index([entityType, entityId, role, sortOrder])
+}
+
+// ─── SEO ────────────────────────────────────────────────────────────────────
+
+model SeoMeta {
+  id                 String   @id @default(cuid())
+  metaTitle          String?
+  metaDescription    String?
+  h1Override         String?
+  focusKeyword       String?
+  secondaryKeywords  String[] @default([])
+  keywordVariants    String[] @default([])
+  relatedTerms       String[] @default([])
+  canonicalUrl       String?
+  robotsIndex        Boolean  @default(true)
+  robotsFollow       Boolean  @default(true)
+  ogTitle            String?
+  ogDescription      String?
+  ogImageId          String?
+  ogImage            Media?   @relation("SeoOgImage", fields: [ogImageId], references: [id], onDelete: SetNull)
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImageId     String?
+  twitterImage       Media?   @relation("SeoTwitterImage", fields: [twitterImageId], references: [id], onDelete: SetNull)
+  schemaType         String?
+  customJsonLd       Json?
+  updatedAt          DateTime @updatedAt @db.Timestamptz
+
+  customMetaTags CustomMetaTag[]
+
+  region      Region?
+  destination Destination?
+  journey     Journey?
+  experience  Experience?
+  service     Service?
+  article     Article?
+  category    Category?
+  page        Page?
+
+  @@index([focusKeyword])
+}
+
+model CustomMetaTag {
+  id        String        @id @default(cuid())
+  seoId     String? // null = global (site-wide)
+  seo       SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: Cascade)
+  attribute MetaAttribute @default(NAME)
+  key       String
+  content   String
+  sortOrder Int           @default(0)
+
+  @@index([seoId, sortOrder])
+}
+
+model SeoSettings {
+  id                   String   @id @default("singleton")
+  siteTitle            String   @default("India Uncharted")
+  titleSeparator       String   @default(" | ")
+  defaultMetaTitle     String?
+  defaultMetaDescription String?
+  defaultKeywords      String[] @default([])
+  defaultRobotsIndex   Boolean  @default(true)
+  defaultRobotsFollow  Boolean  @default(true)
+  defaultOgTitle       String?
+  defaultOgDescription String?
+  defaultTwitterTitle  String?
+  defaultTwitterDescription String?
+  twitterHandle        String?
+  /// Per-entity-type title/description patterns, e.g. { "DESTINATION": { "title": "{name} Travel Guide & Tour Packages", "description": "…" } }
+  patterns             Json     @default("{}")
+  googleVerification   String?
+  bingVerification     String?
+  yandexVerification   String?
+  pinterestVerification String?
+  ga4Id                String?
+  gtmId                String?
+  metaPixelId          String?
+  consentRequired      Boolean  @default(true)
+  /// SUPER_ADMIN only; allowlisted <meta>/<link> tags, parsed and re-serialised.
+  customHeadTags       Json     @default("[]")
+  organizationJsonLd   Json?
+  updatedAt            DateTime @updatedAt @db.Timestamptz
+}
+
+model Redirect {
+  id         String         @id @default(cuid())
+  fromPath   String         @unique // normalised: lowercase, leading slash, no trailing slash, no query
+  toPath     String? // null only for 410
+  statusCode Int            @default(301)
+  origin     RedirectOrigin @default(MANUAL)
+  isActive   Boolean        @default(true)
+  hits       Int            @default(0)
+  lastHitAt  DateTime?      @db.Timestamptz
+  note       String?
+  createdAt  DateTime       @default(now()) @db.Timestamptz
+  updatedAt  DateTime       @updatedAt @db.Timestamptz
+}
+
+model NotFoundLog {
+  id           String   @id @default(cuid())
+  path         String   @unique
+  hits         Int      @default(1)
+  lastReferrer String?
+  lastSeenAt   DateTime @default(now()) @db.Timestamptz
+  resolved     Boolean  @default(false)
+}
+
+// ─── Taxonomy, FAQ, relations, sections ─────────────────────────────────────
+
+model Category {
+  id        String        @id @default(cuid())
+  type      CategoryType
+  slug      String
+  name      String
+  intro     String?
+  body      Json?
+  heroId    String?
+  hero      Media?        @relation("CategoryHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status    ContentStatus @default(PUBLISHED)
+  sortOrder Int           @default(0)
+  seoId     String?       @unique
+  seo       SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt DateTime      @default(now()) @db.Timestamptz
+  updatedAt DateTime      @updatedAt @db.Timestamptz
+
+  journeyStyles    JourneyStyle[]
+  experienceThemes ExperienceTheme[]
+  articles         Article[]
+  faqs             Faq[]
+
+  @@unique([type, slug])
+}
+
+model Tag {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  articles    ArticleTag[]
+  experiences ExperienceTag[]
+}
+
+model Faq {
+  id         String        @id @default(cuid())
+  question   String
+  answer     String // plain text with paragraphs; rendered as HTML paragraphs
+  categoryId String?
+  category   Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  status     ContentStatus @default(PUBLISHED)
+  sortOrder  Int           @default(0)
+  createdAt  DateTime      @default(now()) @db.Timestamptz
+  updatedAt  DateTime      @updatedAt @db.Timestamptz
+
+  assignments FaqAssignment[]
+}
+
+model FaqAssignment {
+  id         String     @id @default(cuid())
+  faqId      String
+  faq        Faq        @relation(fields: [faqId], references: [id], onDelete: Cascade)
+  entityType EntityType
+  entityId   String
+  sortOrder  Int        @default(0)
+
+  @@unique([faqId, entityType, entityId])
+  @@index([entityType, entityId, sortOrder])
+}
+
+model RelatedLink {
+  id        String         @id @default(cuid())
+  fromType  EntityType
+  fromId    String
+  toType    EntityType
+  toId      String
+  sortOrder Int            @default(0)
+  origin    RelationOrigin @default(MANUAL)
+  createdAt DateTime       @default(now()) @db.Timestamptz
+
+  @@unique([fromType, fromId, toType, toId])
+  @@index([fromType, fromId, sortOrder])
+  @@index([toType, toId])
+}
+
+model Section {
+  id        String      @id @default(cuid())
+  ownerType EntityType
+  ownerId   String
+  type      SectionType
+  /// Validated against the Zod schema for `type` on every write.
+  props     Json
+  isVisible Boolean     @default(true)
+  sortOrder Int         @default(0)
+  createdAt DateTime    @default(now()) @db.Timestamptz
+  updatedAt DateTime    @updatedAt @db.Timestamptz
+
+  @@index([ownerType, ownerId, sortOrder])
+}
+
+// ─── Travel content ─────────────────────────────────────────────────────────
+
+model Region {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  name             String
+  tagline          String?
+  shortDescription String?
+  intro            Json?
+  mapKey           String? // id of the region group in the India map SVG
+  heroId           String?
+  hero             Media?        @relation("RegionHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status           ContentStatus @default(DRAFT)
+  publishedAt      DateTime?     @db.Timestamptz
+  sortOrder        Int           @default(0)
+  seoId            String?       @unique
+  seo              SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt        DateTime      @default(now()) @db.Timestamptz
+  updatedAt        DateTime      @updatedAt @db.Timestamptz
+
+  destinations Destination[]
+}
+
+model Destination {
+  id                  String          @id @default(cuid())
+  slug                String          @unique
+  name                String
+  title               String? // "The Pink City"
+  type                DestinationType @default(CITY)
+  state               String?
+  country             String          @default("India")
+  regionId            String?
+  region              Region?         @relation(fields: [regionId], references: [id], onDelete: SetNull)
+  parentId            String?
+  parent              Destination?    @relation("DestinationTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children            Destination[]   @relation("DestinationTree")
+  latitude            Float?
+  longitude           Float?
+  shortDescription    String?
+  intro               Json?
+  whyVisit            Json?
+  bestTime            String?
+  weather             String?
+  howToReach          String?
+  localTransport      String?
+  recommendedDuration String?
+  food                Json?
+  culture             Json?
+  festivals           Json?
+  travelTips          Json?
+  whereToStay         Json?
+  isOffbeat           Boolean         @default(false)
+  isFeatured          Boolean         @default(false)
+  heroId              String?
+  hero                Media?          @relation("DestinationHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status              ContentStatus   @default(DRAFT)
+  publishedAt         DateTime?       @db.Timestamptz
+  sortOrder           Int             @default(0)
+  seoId               String?         @unique
+  seo                 SeoMeta?        @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt           DateTime        @default(now()) @db.Timestamptz
+  updatedAt           DateTime        @updatedAt @db.Timestamptz
+
+  highlights        DestinationHighlight[]
+  journeyStops      JourneyStop[]
+  overnightDays     ItineraryDay[]
+  experiences       Experience[]
+  articles          ArticleDestination[]
+
+  @@index([status, sortOrder])
+  @@index([regionId])
+  @@index([parentId])
+}
+
+model DestinationHighlight {
+  id            String        @id @default(cuid())
+  destinationId String
+  destination   Destination   @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  kind          HighlightKind
+  title         String
+  body          String?
+  mediaId       String?
+  media         Media?        @relation(fields: [mediaId], references: [id], onDelete: SetNull)
+  sortOrder     Int           @default(0)
+
+  @@index([destinationId, kind, sortOrder])
+}
+
+model Journey {
+  id                String        @id @default(cuid())
+  slug              String        @unique
+  name              String
+  kind              JourneyKind   @default(JOURNEY)
+  days              Int?
+  nights            Int?
+  durationLabel     String? // for courses without fixed days, e.g. "Long-term"
+  shortDescription  String?
+  overview          Json?
+  idealFor          String?
+  tourType          String? // "Private / On Demand"
+  pickupDrop        String?
+  highlights        String[]      @default([])
+  inclusions        String[]      @default([])
+  exclusions        String[]      @default([])
+  whyChoose         String[]      @default([])
+  accommodationNote String?
+  transportNote     String?
+  practicalInfo     Json?
+  bestTime          String?
+  priceFromInr      Int?
+  quoteOnly         Boolean       @default(true)
+  isFeatured        Boolean       @default(false)
+  heroId            String?
+  hero              Media?        @relation("JourneyHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status            ContentStatus @default(DRAFT)
+  publishedAt       DateTime?     @db.Timestamptz
+  sortOrder         Int           @default(0)
+  seoId             String?       @unique
+  seo               SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt         DateTime      @default(now()) @db.Timestamptz
+  updatedAt         DateTime      @updatedAt @db.Timestamptz
+
+  stops         JourneyStop[]
+  itinerary     ItineraryDay[]
+  bikeDetail    BikeTourDetail?
+  styles        JourneyStyle[]
+  experiences   JourneyExperience[]
+  articles      ArticleJourney[]
+  testimonials  Testimonial[]
+
+  @@index([status, kind, sortOrder])
+}
+
+model JourneyStop {
+  id            String      @id @default(cuid())
+  journeyId     String
+  journey       Journey     @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  nights        Int?
+  isOptional    Boolean     @default(false)
+  sortOrder     Int         @default(0)
+
+  @@unique([journeyId, destinationId, sortOrder])
+  @@index([destinationId])
+}
+
+model ItineraryDay {
+  id                     String       @id @default(cuid())
+  journeyId              String
+  journey                Journey      @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  dayNumber              Int
+  /// For grouped entries such as "Days 1–3"
+  dayEnd                 Int?
+  title                  String
+  body                   Json?
+  overnightDestinationId String?
+  overnightDestination   Destination? @relation(fields: [overnightDestinationId], references: [id], onDelete: SetNull)
+  meals                  String?
+  sortOrder              Int          @default(0)
+
+  @@index([journeyId, sortOrder])
+}
+
+model BikeTourDetail {
+  id                String      @id @default(cuid())
+  journeyId         String      @unique
+  journey           Journey     @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  totalDistanceKm   Int?
+  terrain           String?
+  difficulty        Difficulty?
+  supportVehicle    String?
+  motorcycleModel   String?
+  riderRequirements String?
+  safetyInfo        String?
+  bestRidingSeason  String?
+}
+
+model JourneyStyle {
+  journeyId  String
+  journey    Journey  @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([journeyId, categoryId])
+}
+
+model Experience {
+  id               String           @id @default(cuid())
+  slug             String           @unique
+  name             String
+  format           ExperienceFormat @default(OTHER)
+  destinationId    String?
+  destination      Destination?     @relation(fields: [destinationId], references: [id], onDelete: SetNull)
+  location         String?
+  duration         String?
+  bestTime         String?
+  shortDescription String?
+  overview         Json?
+  whatToExpect     Json?
+  thingsToKnow     Json?
+  travelTips       Json?
+  pickupDrop       String?
+  idealFor         String?
+  tourType         String?
+  highlights       String[]         @default([])
+  inclusions       String[]         @default([])
+  exclusions       String[]         @default([])
+  priceFromInr     Int?
+  quoteOnly        Boolean          @default(true)
+  isFeatured       Boolean          @default(false)
+  heroId           String?
+  hero             Media?           @relation("ExperienceHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status           ContentStatus    @default(DRAFT)
+  publishedAt      DateTime?        @db.Timestamptz
+  sortOrder        Int              @default(0)
+  seoId            String?          @unique
+  seo              SeoMeta?         @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt        DateTime         @default(now()) @db.Timestamptz
+  updatedAt        DateTime         @updatedAt @db.Timestamptz
+
+  steps    ExperienceStep[]
+  themes   ExperienceTheme[]
+  journeys JourneyExperience[]
+  tags     ExperienceTag[]
+  articles ArticleExperience[]
+
+  @@index([status, sortOrder])
+  @@index([destinationId])
+}
+
+model ExperienceStep {
+  id           String     @id @default(cuid())
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  title        String
+  body         String?
+  sortOrder    Int        @default(0)
+
+  @@index([experienceId, sortOrder])
+}
+
+model ExperienceTheme {
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  categoryId   String
+  category     Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  isPrimary    Boolean    @default(false)
+
+  @@id([experienceId, categoryId])
+}
+
+model JourneyExperience {
+  journeyId    String
+  journey      Journey    @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  sortOrder    Int        @default(0)
+
+  @@id([journeyId, experienceId])
+}
+
+model ExperienceTag {
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  tagId        String
+  tag          Tag        @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([experienceId, tagId])
+}
+
+model Service {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  name             String
+  shortDescription String?
+  description      Json?
+  benefits         String[]      @default([])
+  features         String[]      @default([])
+  process          String[]      @default([])
+  heroId           String?
+  hero             Media?        @relation("ServiceHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status           ContentStatus @default(DRAFT)
+  publishedAt      DateTime?     @db.Timestamptz
+  sortOrder        Int           @default(0)
+  seoId            String?       @unique
+  seo              SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt        DateTime      @default(now()) @db.Timestamptz
+  updatedAt        DateTime      @updatedAt @db.Timestamptz
+
+  vehicles     Vehicle[]
+  testimonials Testimonial[]
+}
+
+model Vehicle {
+  id        String   @id @default(cuid())
+  serviceId String
+  service   Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  name      String
+  class     String? // "SUV · Premium"
+  seats     Int? // including driver, as the client states it
+  features  String[] @default([])
+  mediaId   String?
+  media     Media?   @relation(fields: [mediaId], references: [id], onDelete: SetNull)
+  sortOrder Int      @default(0)
+}
+
+model Author {
+  id       String    @id @default(cuid())
+  slug     String    @unique
+  name     String
+  bio      String?
+  avatarId String?
+  avatar   Media?    @relation(fields: [avatarId], references: [id], onDelete: SetNull)
+  articles Article[]
+}
+
+model Article {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  title            String
+  kind             ArticleKind   @default(BLOG)
+  excerpt          String?
+  body             Json?
+  authorId         String?
+  author           Author?       @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  categoryId       String?
+  category         Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  readingMinutes   Int?
+  tocEnabled       Boolean       @default(true)
+  isFeatured       Boolean       @default(false)
+  heroId           String?
+  hero             Media?        @relation("ArticleHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status           ContentStatus @default(DRAFT)
+  publishedAt      DateTime?     @db.Timestamptz
+  contentUpdatedAt DateTime?     @db.Timestamptz
+  sortOrder        Int           @default(0)
+  seoId            String?       @unique
+  seo              SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt        DateTime      @default(now()) @db.Timestamptz
+  updatedAt        DateTime      @updatedAt @db.Timestamptz
+
+  destinations ArticleDestination[]
+  journeys     ArticleJourney[]
+  experiences  ArticleExperience[]
+  tags         ArticleTag[]
+
+  @@index([status, publishedAt])
+}
+
+model ArticleDestination {
+  articleId     String
+  article       Article     @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, destinationId])
+}
+
+model ArticleJourney {
+  articleId String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  journeyId String
+  journey   Journey @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, journeyId])
+}
+
+model ArticleExperience {
+  articleId    String
+  article      Article    @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, experienceId])
+}
+
+model ArticleTag {
+  articleId String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tagId     String
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+}
+
+model Testimonial {
+  id           String            @id @default(cuid())
+  authorName   String
+  body         String
+  headline     String?
+  location     String?
+  avatarId     String?
+  avatar       Media?            @relation(fields: [avatarId], references: [id], onDelete: SetNull)
+  rating       Int?
+  source       TestimonialSource @default(DIRECT)
+  sourceUrl    String?
+  travelledOn  DateTime?         @db.Date
+  /// Publishing requires verifiedAt (enforced in the write layer).
+  verifiedAt   DateTime?         @db.Timestamptz
+  verifiedById String?
+  verifiedBy   User?             @relation("TestimonialVerifier", fields: [verifiedById], references: [id], onDelete: SetNull)
+  journeyId    String?
+  journey      Journey?          @relation(fields: [journeyId], references: [id], onDelete: SetNull)
+  serviceId    String?
+  service      Service?          @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+  status       ContentStatus     @default(DRAFT)
+  sortOrder    Int               @default(0)
+  createdAt    DateTime          @default(now()) @db.Timestamptz
+  updatedAt    DateTime          @updatedAt @db.Timestamptz
+}
+
+model Page {
+  id          String        @id @default(cuid())
+  key         String        @unique // home | about | contact | plan-my-journey | faqs | privacy-policy | terms-and-conditions | cookie-policy | custom-*
+  slug        String        @unique
+  title       String
+  intro       String?
+  body        Json?
+  heroId      String?
+  hero        Media?        @relation("PageHero", fields: [heroId], references: [id], onDelete: SetNull)
+  status      ContentStatus @default(DRAFT)
+  publishedAt DateTime?     @db.Timestamptz
+  seoId       String?       @unique
+  seo         SeoMeta?      @relation(fields: [seoId], references: [id], onDelete: SetNull)
+  createdAt   DateTime      @default(now()) @db.Timestamptz
+  updatedAt   DateTime      @updatedAt @db.Timestamptz
+}
+
+// ─── Operations ─────────────────────────────────────────────────────────────
+
+model Enquiry {
+  id                 String         @id @default(cuid())
+  refCode            String         @unique
+  name               String
+  email              String
+  phoneE164          String?
+  whatsappOptIn      Boolean        @default(false)
+  country            String?
+  travelDateFrom     DateTime?      @db.Date
+  travelDateTo       DateTime?      @db.Date
+  flexibleDates      Boolean        @default(false)
+  adults             Int?
+  children           Int?
+  destinationsWanted String[]       @default([])
+  travelStyles       String[]       @default([])
+  budgetBand         BudgetBand     @default(UNDECIDED)
+  message            String?
+  sourcePath         String?
+  entityType         EntityType?
+  entityId           String?
+  entityNameSnapshot String?
+  channel            EnquiryChannel @default(FORM)
+  status             EnquiryStatus  @default(NEW)
+  assignedToId       String?
+  assignedTo         User?          @relation("EnquiryAssignee", fields: [assignedToId], references: [id], onDelete: SetNull)
+  utm                Json?
+  ipHash             String?
+  userAgent          String?
+  consentAt          DateTime?      @db.Timestamptz
+  contactedAt        DateTime?      @db.Timestamptz
+  createdAt          DateTime       @default(now()) @db.Timestamptz
+  updatedAt          DateTime       @updatedAt @db.Timestamptz
+
+  notes EnquiryNote[]
+
+  @@index([status, createdAt])
+  @@index([entityType, entityId])
+}
+
+model EnquiryNote {
+  id        String   @id @default(cuid())
+  enquiryId String
+  enquiry   Enquiry  @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  body      String
+  createdAt DateTime @default(now()) @db.Timestamptz
+}
+
+model NewsletterSubscriber {
+  id           String           @id @default(cuid())
+  email        String           @unique
+  status       SubscriberStatus @default(PENDING)
+  confirmToken String?          @unique
+  source       String?
+  consentAt    DateTime?        @db.Timestamptz
+  confirmedAt  DateTime?        @db.Timestamptz
+  createdAt    DateTime         @default(now()) @db.Timestamptz
+}
+
+model SeasonalNotice {
+  id            String      @id @default(cuid())
+  scope         NoticeScope
+  targetId      String?
+  title         String
+  body          String
+  startsOn      DateTime?   @db.Date
+  endsOn        DateTime?   @db.Date
+  blocksEnquiry Boolean     @default(false)
+  version       Int         @default(1)
+  isActive      Boolean     @default(false)
+  createdAt     DateTime    @default(now()) @db.Timestamptz
+  updatedAt     DateTime    @updatedAt @db.Timestamptz
+
+  @@index([scope, targetId, isActive])
+}
+
+model NavigationMenu {
+  id    String           @id @default(cuid())
+  key   String           @unique // header | footer-explore | footer-plan | footer-company | footer-legal | mobile
+  name  String
+  items NavigationItem[]
+}
+
+model NavigationItem {
+  id           String           @id @default(cuid())
+  menuId       String
+  menu         NavigationMenu   @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  parentId     String?
+  parent       NavigationItem?  @relation("NavTree", fields: [parentId], references: [id], onDelete: Cascade)
+  children     NavigationItem[] @relation("NavTree")
+  label        String
+  description  String?
+  kind         NavKind          @default(LINK)
+  href         String?
+  entityType   EntityType?
+  entityId     String?
+  /// For MEGA items: auto-populate from a source, e.g. "regions", "experience-themes", "travel-styles"
+  autoSource   String?
+  isVisible    Boolean          @default(true)
+  openInNewTab Boolean          @default(false)
+  sortOrder    Int              @default(0)
+
+  @@index([menuId, parentId, sortOrder])
+}
+
+model SiteSettings {
+  id                String   @id @default("singleton")
+  businessName      String   @default("India Uncharted")
+  tagline           String?
+  brandLine         String?
+  logoId            String?
+  logo              Media?   @relation("SettingsLogo", fields: [logoId], references: [id], onDelete: SetNull)
+  logoLightId       String?
+  logoLight         Media?   @relation("SettingsLogoLight", fields: [logoLightId], references: [id], onDelete: SetNull)
+  faviconId         String?
+  favicon           Media?   @relation("SettingsFavicon", fields: [faviconId], references: [id], onDelete: SetNull)
+  phoneE164         String?
+  whatsappE164      String? // WhatsApp CTAs render only when set
+  email             String?
+  enquiryEmail      String?
+  addressLine1      String?
+  addressLine2      String?
+  city              String?
+  region            String?
+  postalCode        String?
+  country           String?  @default("India")
+  mapUrl            String?
+  latitude          Float?
+  longitude         Float?
+  socials           Json     @default("[]") // [{ network, url }]
+  businessHours     Json     @default("[]")
+  footerDescription String?
+  copyright         String?
+  defaultCtaLabel   String?  @default("Plan My Journey")
+  defaultCtaHref    String?  @default("/plan-my-journey")
+  defaultOgImageId  String?
+  defaultOgImage    Media?   @relation("SettingsOg", fields: [defaultOgImageId], references: [id], onDelete: SetNull)
+  newsletterEnabled Boolean  @default(false)
+  updatedAt         DateTime @updatedAt @db.Timestamptz
+}
+
+model RateLimit {
+  key         String   @id
+  windowStart DateTime @db.Timestamptz
+  count       Int      @default(0)
+}

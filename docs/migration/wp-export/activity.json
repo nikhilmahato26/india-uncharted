@@ -1,0 +1,412 @@
+[
+ {
+  "id": 49,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/activity/cycle-tour/",
+  "name": "Cycle Tour",
+  "slug": "cycle-tour",
+  "yoast_head_json": {
+   "title": "Cycle Tour Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/activity/cycle-tour/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "Cycle Tour Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/activity/cycle-tour/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/activity/cycle-tour/",
+      "url": "https://indiauncharted.com/activity/cycle-tour/",
+      "name": "Cycle Tour Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/activity/cycle-tour/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/activity/cycle-tour/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cycle Tour"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 51,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/activity/desert-evening-tour/",
+  "name": "Desert Evening Tour",
+  "slug": "desert-evening-tour",
+  "yoast_head_json": {
+   "title": "Desert Evening Tour Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/activity/desert-evening-tour/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "Desert Evening Tour Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/activity/desert-evening-tour/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/activity/desert-evening-tour/",
+      "url": "https://indiauncharted.com/activity/desert-evening-tour/",
+      "name": "Desert Evening Tour Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/activity/desert-evening-tour/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/activity/desert-evening-tour/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Desert Evening Tour"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 50,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/activity/food-walking-tour/",
+  "name": "Food Walking Tour",
+  "slug": "food-walking-tour",
+  "yoast_head_json": {
+   "title": "Food Walking Tour Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/activity/food-walking-tour/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "Food Walking Tour Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/activity/food-walking-tour/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/activity/food-walking-tour/",
+      "url": "https://indiauncharted.com/activity/food-walking-tour/",
+      "name": "Food Walking Tour Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/activity/food-walking-tour/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/activity/food-walking-tour/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Food Walking Tour"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 52,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/activity/sightseeing-tour/",
+  "name": "Sightseeing Tour",
+  "slug": "sightseeing-tour",
+  "yoast_head_json": {
+   "title": "Sightseeing Tour Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/activity/sightseeing-tour/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "Sightseeing Tour Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/activity/sightseeing-tour/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/activity/sightseeing-tour/",
+      "url": "https://indiauncharted.com/activity/sightseeing-tour/",
+      "name": "Sightseeing Tour Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/activity/sightseeing-tour/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/activity/sightseeing-tour/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sightseeing Tour"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 48,
+  "count": 8,
+  "description": "",
+  "link": "https://indiauncharted.com/activity/walking-tour/",
+  "name": "Walking Tour",
+  "slug": "walking-tour",
+  "yoast_head_json": {
+   "title": "Walking Tour Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/activity/walking-tour/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "Walking Tour Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/activity/walking-tour/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/activity/walking-tour/",
+      "url": "https://indiauncharted.com/activity/walking-tour/",
+      "name": "Walking Tour Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/activity/walking-tour/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/activity/walking-tour/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Walking Tour"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ }
+]

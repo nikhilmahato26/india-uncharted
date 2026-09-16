@@ -1,26 +1,439 @@
 @import "tailwindcss";
 
+/*
+ * India Uncharted — The Miniature Folio.
+ * Every colour, type step, frame and motion value lives here. Components use
+ * the generated utilities (bg-paper, text-display-lg, …); nothing else defines
+ * a colour or a font size.
+ *
+ * Contrast (measured): ink/paper 14.6 · ink-2/paper 8.6 · ink-3/paper 5.2 ·
+ * paper/forest-800 8.4 · paper/forest-900 11.6 · gold-300/forest-900 7.3 ·
+ * paper/terracotta-600 5.3 · white/terracotta-600 6.1.
+ * Gold (#B38A3A) is 2.7 on paper: rules and ornament only, never text there.
+ */
+
+@theme {
+  /* ── paper (wasli) ───────────────────────────── */
+  --color-paper: #f4eddf;
+  --color-paper-2: #ebe1cd;
+  --color-paper-3: #dfd2b8;
+  --color-paper-4: #cfbf9f;
+
+  /* ── lamp-black ink ──────────────────────────── */
+  --color-ink: #221b15;
+  --color-ink-2: #4b4036;
+  --color-ink-3: #6e6052;
+  --color-rule: #cbbb9a;
+
+  /* ── malachite / forest ──────────────────────── */
+  --color-forest-50: #eef3ee;
+  --color-forest-100: #dbe6dd;
+  --color-forest-200: #b5cbba;
+  --color-forest-300: #8aac93;
+  --color-forest-400: #5f8a6d;
+  --color-forest-500: #436e54;
+  --color-forest-600: #365b46;
+  --color-forest-700: #2f513f;
+  --color-forest-800: #2b4a3c;
+  --color-forest-900: #1c3329;
+  --color-forest-950: #12231c;
+
+  /* ── Indian red / terracotta (the action colour) ─ */
+  --color-terracotta-50: #fbf1ec;
+  --color-terracotta-100: #f5dfd4;
+  --color-terracotta-200: #ebbda8;
+  --color-terracotta-300: #dd9577;
+  --color-terracotta-400: #c86a4c;
+  --color-terracotta-500: #b85336;
+  --color-terracotta-600: #a5432a;
+  --color-terracotta-700: #86341f;
+  --color-terracotta-800: #6b2b1b;
+  --color-terracotta-900: #4f2115;
+  --color-terracotta-950: #2e130c;
+
+  /* ── gold leaf (rules, never body text on paper) ─ */
+  --color-gold-100: #f3e7c8;
+  --color-gold-200: #e8d29e;
+  --color-gold-300: #d9bc78;
+  --color-gold-400: #c7a25a;
+  --color-gold-500: #b38a3a;
+  --color-gold-600: #8f6d2b;
+
+  /* ── states ──────────────────────────────────── */
+  --color-success: #2f6b45;
+  --color-success-soft: #e2eee4;
+  --color-warning: #8a5a12;
+  --color-warning-soft: #f6ead0;
+  --color-danger: #9b2c22;
+  --color-danger-soft: #f6dfdb;
+  /* Google's own link blue, used only in the admin's search-result preview. */
+  --color-serp-link: #1a0dab;
+
+  /* ── type ────────────────────────────────────── */
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-xl: clamp(3rem, 1.6rem + 5.6vw, 6rem);
+  --text-display-xl--line-height: 0.94;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-xl--font-weight: 500;
+  --text-display-lg: clamp(2.5rem, 1.7rem + 3.4vw, 4.5rem);
+  --text-display-lg--line-height: 0.98;
+  --text-display-lg--letter-spacing: -0.015em;
+  --text-display-lg--font-weight: 500;
+  --text-display-md: clamp(2rem, 1.5rem + 2.1vw, 3.25rem);
+  --text-display-md--line-height: 1.04;
+  --text-display-md--letter-spacing: -0.01em;
+  --text-display-md--font-weight: 500;
+  --text-title: clamp(1.5rem, 1.3rem + 0.9vw, 2.125rem);
+  --text-title--line-height: 1.12;
+  --text-title--font-weight: 600;
+  --text-subtitle: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-subtitle--line-height: 1.3;
+  --text-subtitle--font-weight: 600;
+  --text-lead: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+  --text-lead--line-height: 1.6;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.68;
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.55;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.45;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.14em;
+  --text-label--font-weight: 600;
+
+  /* ── spacing rhythm ──────────────────────────── */
+  --spacing-gutter: clamp(1rem, 0.6rem + 1.8vw, 2.5rem);
+  --spacing-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --spacing-band: clamp(0.5rem, 0.35rem + 0.5vw, 0.875rem);
+
+  /* ── frames: square corners; small controls 2px ─ */
+  --radius-control: 2px;
+  --radius-card: 0px;
+
+  /* ── depth (offset + soft blur; used sparingly) ─ */
+  --shadow-lift: 0 18px 40px -22px rgb(34 27 21 / 0.45);
+  --shadow-float: 0 24px 60px -28px rgb(34 27 21 / 0.55);
+
+  /* ── motion ──────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-fast: 160ms;
+  --duration-base: 320ms;
+  --duration-slow: 720ms;
+
+  --breakpoint-xs: 24rem;
+}
+
+/* Stacking scale — no arbitrary z-index anywhere. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --z-raised: 10;
+  --z-sticky: 40;
+  --z-header: 50;
+  --z-drawer: 70;
+  --z-dialog: 80;
+  --z-toast: 90;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility z-raised {
+  z-index: var(--z-raised);
+}
+@utility z-sticky {
+  z-index: var(--z-sticky);
+}
+@utility z-header {
+  z-index: var(--z-header);
+}
+@utility z-drawer {
+  z-index: var(--z-drawer);
+}
+@utility z-dialog {
+  z-index: var(--z-dialog);
+}
+@utility z-toast {
+  z-index: var(--z-toast);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility measure {
+  max-width: 68ch;
+}
+
+/*
+ * Card titles run to one or two lines. Reserving both keeps the inscriptions
+ * and dates on a shared line across a row, which is what makes a grid read as
+ * a grid rather than as loose cards.
+ */
+@utility lines-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(2lh);
+}
+
+@utility container-folio {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+@utility font-display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/*
+ * The folio frame: margin → hashiya band → gold rule → plate.
+ * `--band` colours the border band; the inner gold hairline sits 3px inside it.
+ */
+@utility folio {
+  position: relative;
+  padding: var(--spacing-band);
+  background: var(--band, var(--color-terracotta-600));
+  &::after {
+    content: "";
+    position: absolute;
+    inset: calc(var(--spacing-band) - 4px);
+    border: 1px solid var(--rule, var(--color-gold-300));
+    pointer-events: none;
+    transition: inset var(--duration-base) var(--ease-out-expo);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Pearl border: the dotted band from miniature margins, as a surface, not a picture. */
+@utility pearl-band {
+  background-color: var(--band, var(--color-terracotta-600));
+  background-image: radial-gradient(circle at center, var(--pearl, var(--color-gold-300)) 1.1px, transparent 1.6px);
+  background-size: 9px 9px;
+  background-position: center;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-terracotta-600);
+    color: var(--color-paper);
+  }
+
+  :where(input, textarea) {
+    caret-color: var(--color-terracotta-600);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta-600);
+    outline-offset: 3px;
+  }
+
+  .on-dark :focus-visible,
+  [data-surface="dark"] :focus-visible {
+    outline-color: var(--color-gold-300);
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  :where(th, td, time, data, output, .tabular) {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  code {
+    font-size: 0.9em;
+    background: var(--color-paper-2);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-control);
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    filter: sepia(1) saturate(3) hue-rotate(-20deg) brightness(0.7);
+    cursor: pointer;
+  }
+
+  * {
+    scrollbar-color: var(--color-paper-4) transparent;
+    scrollbar-width: thin;
+  }
+
+  hr {
+    border-color: var(--color-rule);
+  }
+
+  img {
+    color: transparent; /* hide alt text flash while loading */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+    }
+  }
+}
+
+/* ── Prose: rich text rendered from the CMS ─────────────────────────────── */
+@layer components {
+  .prose-folio {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    color: var(--color-ink-2);
+    max-width: 68ch;
+  }
+  .prose-folio > * + * {
+    margin-top: 1.1em;
+  }
+  .prose-folio h2 {
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-top: 2.2em;
+    margin-bottom: -0.2em;
+  }
+  .prose-folio h3 {
+    font-size: var(--text-subtitle);
+    line-height: var(--text-subtitle--line-height);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-top: 1.8em;
+    margin-bottom: -0.35em;
+  }
+  .prose-folio h4,
+  .prose-folio h5,
+  .prose-folio h6 {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-top: 1.5em;
+    margin-bottom: -0.5em;
+  }
+  .prose-folio strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+  .prose-folio a {
+    color: var(--color-terracotta-700);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-terracotta-600) 45%, transparent);
+  }
+  .prose-folio a:hover {
+    text-decoration-color: currentColor;
+  }
+  .prose-folio ul,
+  .prose-folio ol {
+    padding-left: 1.25em;
+  }
+  .prose-folio ul {
+    list-style: none;
+  }
+  .prose-folio ul > li {
+    position: relative;
+  }
+  .prose-folio ul > li::before {
+    content: "";
+    position: absolute;
+    left: -1.05em;
+    top: 0.72em;
+    width: 0.38em;
+    height: 0.38em;
+    background: var(--color-terracotta-600);
+    transform: rotate(45deg);
+  }
+  .prose-folio ol {
+    list-style: decimal;
+  }
+  .prose-folio li + li {
+    margin-top: 0.4em;
+  }
+  .prose-folio li > p + p {
+    margin-top: 0.4em;
+  }
+  .prose-folio blockquote {
+    border-top: 1px solid var(--color-rule);
+    border-bottom: 1px solid var(--color-rule);
+    padding: 1.2em 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-subtitle);
+    line-height: 1.4;
+    color: var(--color-ink);
+  }
+  .prose-folio hr {
+    margin: 2.5em 0;
+  }
+  .prose-folio table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-small);
+  }
+  .prose-folio th,
+  .prose-folio td {
+    border-bottom: 1px solid var(--color-rule);
+    padding: 0.6em 0.75em;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-folio th {
+    color: var(--color-ink);
+    font-weight: 600;
+    background: var(--color-paper-2);
+  }
+  .prose-folio figure img {
+    width: 100%;
+    height: auto;
+  }
+  .prose-folio figcaption {
+    font-size: var(--text-caption);
+    color: var(--color-ink-3);
+    margin-top: 0.5em;
+  }
+
+  .on-dark .prose-folio,
+  .prose-folio.on-dark {
+    color: color-mix(in srgb, var(--color-paper) 86%, transparent);
+  }
+  .on-dark .prose-folio :where(h2, h3, h4, strong) {
+    color: var(--color-paper);
+  }
 }

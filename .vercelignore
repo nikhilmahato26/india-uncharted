@@ -1,0 +1,12 @@
+# Nothing here is needed to run the site, and internal notes should not
+# travel to a server. Source of truth stays in the repo.
+docs/
+.impeccable/
+*.docx
+BLUEPRINT.md
+IMPLEMENTATION_PLAN.md
+DESIGN.md
+HANDOVER.md
+DEPLOY.md
+PRODUCT.md
+tests/

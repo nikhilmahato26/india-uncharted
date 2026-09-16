@@ -1,0 +1,3039 @@
+[
+ {
+  "id": 9,
+  "count": 6,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/agra/",
+  "name": "AGRA",
+  "slug": "agra",
+  "yoast_head_json": {
+   "title": "AGRA Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/agra/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "AGRA Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/agra/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/agra/",
+      "url": "https://indiauncharted.com/destination/agra/",
+      "name": "AGRA Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/agra/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/agra/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AGRA"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 26,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/amritsar/",
+  "name": "AMRITSAR",
+  "slug": "amritsar",
+  "yoast_head_json": {
+   "title": "AMRITSAR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/amritsar/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "AMRITSAR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/amritsar/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/amritsar/",
+      "url": "https://indiauncharted.com/destination/amritsar/",
+      "name": "AMRITSAR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/amritsar/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/amritsar/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AMRITSAR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 18,
+  "count": 4,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/bharatpur/",
+  "name": "BHARATPUR",
+  "slug": "bharatpur",
+  "yoast_head_json": {
+   "title": "BHARATPUR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/bharatpur/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "BHARATPUR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/bharatpur/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/bharatpur/",
+      "url": "https://indiauncharted.com/destination/bharatpur/",
+      "name": "BHARATPUR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/bharatpur/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/bharatpur/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "BHARATPUR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 21,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/bikaner/",
+  "name": "BIKANER",
+  "slug": "bikaner",
+  "yoast_head_json": {
+   "title": "BIKANER Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/bikaner/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "BIKANER Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/bikaner/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/bikaner/",
+      "url": "https://indiauncharted.com/destination/bikaner/",
+      "name": "BIKANER Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/bikaner/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/bikaner/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "BIKANER"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 34,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/chandigarh/",
+  "name": "CHANDIGARH",
+  "slug": "chandigarh",
+  "yoast_head_json": {
+   "title": "CHANDIGARH Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/chandigarh/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "CHANDIGARH Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/chandigarh/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/chandigarh/",
+      "url": "https://indiauncharted.com/destination/chandigarh/",
+      "name": "CHANDIGARH Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/chandigarh/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/chandigarh/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "CHANDIGARH"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 12,
+  "count": 10,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/delhi/",
+  "name": "DELHI",
+  "slug": "delhi",
+  "yoast_head_json": {
+   "title": "DELHI Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/delhi/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "DELHI Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/delhi/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/delhi/",
+      "url": "https://indiauncharted.com/destination/delhi/",
+      "name": "DELHI Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/delhi/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/delhi/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "DELHI"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 39,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/doodhpathri/",
+  "name": "DOODHPATHRI",
+  "slug": "doodhpathri",
+  "yoast_head_json": {
+   "title": "DOODHPATHRI Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/doodhpathri/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "DOODHPATHRI Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/doodhpathri/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/doodhpathri/",
+      "url": "https://indiauncharted.com/destination/doodhpathri/",
+      "name": "DOODHPATHRI Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/doodhpathri/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/doodhpathri/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "DOODHPATHRI"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 11,
+  "count": 6,
+  "description": "About goa activity. <em>Goa is so much more than just sun and sand</em>. It's a vibrant blend of thrilling adventure, rich history, and serene natural beauty.<em>East meets West in this sun-soaked state</em>, where Indian culture intertwines with Portuguese influences left over from a 500-year occupation.Ah, Goa! The very name conjures up images of <em>sun-kissed beaches, swaying palm trees, and a laid-back vibe</em> that is as contagious as a beachside melody.<em>Goa</em>, a tiny emerald land on the west coast of India, the 25th state of the Union states of India, was liberated from Portuguese rule in 1961.",
+  "link": "https://indiauncharted.com/destination/goa/",
+  "name": "GOA",
+  "slug": "goa",
+  "yoast_head_json": {
+   "title": "Goa | Travel Guide to Goa, India",
+   "description": "Discover Goa, India's most popular beach destination. Explore its beaches, culture, heritage, cuisine, nightlife, and unforgettable travel experiences.",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/goa/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "Goa | Travel Guide to Goa, India",
+   "og_description": "Discover Goa, India's most popular beach destination. Explore its beaches, culture, heritage, cuisine, nightlife, and unforgettable travel experiences.",
+   "og_url": "https://indiauncharted.com/destination/goa/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/goa/",
+      "url": "https://indiauncharted.com/destination/goa/",
+      "name": "Goa | Travel Guide to Goa, India",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "description": "Discover Goa, India's most popular beach destination. Explore its beaches, culture, heritage, cuisine, nightlife, and unforgettable travel experiences.",
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/goa/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/goa/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GOA"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 29,
+  "count": 5,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/gulmarg/",
+  "name": "GULMARG",
+  "slug": "gulmarg",
+  "yoast_head_json": {
+   "title": "GULMARG Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/gulmarg/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "GULMARG Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/gulmarg/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/gulmarg/",
+      "url": "https://indiauncharted.com/destination/gulmarg/",
+      "name": "GULMARG Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/gulmarg/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/gulmarg/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GULMARG"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 25,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/haridwar/",
+  "name": "HARIDWAR",
+  "slug": "haridwar",
+  "yoast_head_json": {
+   "title": "HARIDWAR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/haridwar/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "HARIDWAR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/haridwar/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/haridwar/",
+      "url": "https://indiauncharted.com/destination/haridwar/",
+      "name": "HARIDWAR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/haridwar/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/haridwar/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "HARIDWAR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 23,
+  "count": 3,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/himachal-pradesh/",
+  "name": "HIMACHAL PRADESH",
+  "slug": "himachal-pradesh",
+  "yoast_head_json": {
+   "title": "HIMACHAL PRADESH Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/himachal-pradesh/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "HIMACHAL PRADESH Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/himachal-pradesh/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/himachal-pradesh/",
+      "url": "https://indiauncharted.com/destination/himachal-pradesh/",
+      "name": "HIMACHAL PRADESH Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/himachal-pradesh/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/himachal-pradesh/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "HIMACHAL PRADESH"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 31,
+  "count": 9,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/jaipur/",
+  "name": "JAIPUR",
+  "slug": "jaipur",
+  "yoast_head_json": {
+   "title": "JAIPUR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/jaipur/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "JAIPUR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/jaipur/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/jaipur/",
+      "url": "https://indiauncharted.com/destination/jaipur/",
+      "name": "JAIPUR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/jaipur/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/jaipur/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "JAIPUR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 10,
+  "count": 11,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/jaisalmer/",
+  "name": "JAISALMER",
+  "slug": "jaisalmer",
+  "yoast_head_json": {
+   "title": "JAISALMER Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/jaisalmer/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "JAISALMER Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/jaisalmer/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/jaisalmer/",
+      "url": "https://indiauncharted.com/destination/jaisalmer/",
+      "name": "JAISALMER Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/jaisalmer/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/jaisalmer/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "JAISALMER"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 41,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/jaispa/",
+  "name": "JAISPA",
+  "slug": "jaispa",
+  "yoast_head_json": {
+   "title": "JAISPA Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/jaispa/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "JAISPA Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/jaispa/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/jaispa/",
+      "url": "https://indiauncharted.com/destination/jaispa/",
+      "name": "JAISPA Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/jaispa/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/jaispa/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "JAISPA"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 33,
+  "count": 0,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/jammu/",
+  "name": "JAMMU",
+  "slug": "jammu",
+  "yoast_head_json": {
+   "title": "JAMMU Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/jammu/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "JAMMU Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/jammu/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/jammu/",
+      "url": "https://indiauncharted.com/destination/jammu/",
+      "name": "JAMMU Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/jammu/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/jammu/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "JAMMU"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 14,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/jawai/",
+  "name": "JAWAI",
+  "slug": "jawai",
+  "yoast_head_json": {
+   "title": "JAWAI Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/jawai/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "JAWAI Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/jawai/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/jawai/",
+      "url": "https://indiauncharted.com/destination/jawai/",
+      "name": "JAWAI Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/jawai/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/jawai/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "JAWAI"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 15,
+  "count": 9,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/jodhpur/",
+  "name": "JODHPUR",
+  "slug": "jodhpur",
+  "yoast_head_json": {
+   "title": "JODHPUR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/jodhpur/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "JODHPUR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/jodhpur/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/jodhpur/",
+      "url": "https://indiauncharted.com/destination/jodhpur/",
+      "name": "JODHPUR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/jodhpur/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/jodhpur/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "JODHPUR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 22,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/kashmir/",
+  "name": "KASHMIR",
+  "slug": "kashmir",
+  "yoast_head_json": {
+   "title": "KASHMIR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/kashmir/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "KASHMIR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/kashmir/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/kashmir/",
+      "url": "https://indiauncharted.com/destination/kashmir/",
+      "name": "KASHMIR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/kashmir/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/kashmir/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "KASHMIR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 17,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/khajuraho/",
+  "name": "KHAJURAHO",
+  "slug": "khajuraho",
+  "yoast_head_json": {
+   "title": "KHAJURAHO Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/khajuraho/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "KHAJURAHO Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/khajuraho/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/khajuraho/",
+      "url": "https://indiauncharted.com/destination/khajuraho/",
+      "name": "KHAJURAHO Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/khajuraho/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/khajuraho/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "KHAJURAHO"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 45,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/khivhan/",
+  "name": "KHIVHAN",
+  "slug": "khivhan",
+  "yoast_head_json": {
+   "title": "KHIVHAN Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/khivhan/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "KHIVHAN Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/khivhan/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/khivhan/",
+      "url": "https://indiauncharted.com/destination/khivhan/",
+      "name": "KHIVHAN Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/khivhan/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/khivhan/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "KHIVHAN"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 28,
+  "count": 3,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/leh/",
+  "name": "LEH",
+  "slug": "leh",
+  "yoast_head_json": {
+   "title": "LEH Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/leh/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "LEH Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/leh/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/leh/",
+      "url": "https://indiauncharted.com/destination/leh/",
+      "name": "LEH Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/leh/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/leh/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "LEH"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 27,
+  "count": 4,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/manali/",
+  "name": "MANALI",
+  "slug": "manali",
+  "yoast_head_json": {
+   "title": "MANALI Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/manali/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "MANALI Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/manali/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/manali/",
+      "url": "https://indiauncharted.com/destination/manali/",
+      "name": "MANALI Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/manali/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/manali/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MANALI"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 42,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/nubra-valley/",
+  "name": "NUBRA VALLEY",
+  "slug": "nubra-valley",
+  "yoast_head_json": {
+   "title": "NUBRA VALLEY Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/nubra-valley/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "NUBRA VALLEY Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/nubra-valley/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/nubra-valley/",
+      "url": "https://indiauncharted.com/destination/nubra-valley/",
+      "name": "NUBRA VALLEY Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/nubra-valley/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/nubra-valley/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "NUBRA VALLEY"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 36,
+  "count": 4,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/pahalgam/",
+  "name": "PAHALGAM",
+  "slug": "pahalgam",
+  "yoast_head_json": {
+   "title": "PAHALGAM Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/pahalgam/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "PAHALGAM Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/pahalgam/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/pahalgam/",
+      "url": "https://indiauncharted.com/destination/pahalgam/",
+      "name": "PAHALGAM Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/pahalgam/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/pahalgam/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "PAHALGAM"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 43,
+  "count": 2,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/pangong-lake/",
+  "name": "PANGONG LAKE",
+  "slug": "pangong-lake",
+  "yoast_head_json": {
+   "title": "PANGONG LAKE Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/pangong-lake/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "PANGONG LAKE Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/pangong-lake/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/pangong-lake/",
+      "url": "https://indiauncharted.com/destination/pangong-lake/",
+      "name": "PANGONG LAKE Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/pangong-lake/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/pangong-lake/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "PANGONG LAKE"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 20,
+  "count": 3,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/pushkar/",
+  "name": "PUSHKAR",
+  "slug": "pushkar",
+  "yoast_head_json": {
+   "title": "PUSHKAR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/pushkar/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "PUSHKAR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/pushkar/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/pushkar/",
+      "url": "https://indiauncharted.com/destination/pushkar/",
+      "name": "PUSHKAR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/pushkar/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/pushkar/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "PUSHKAR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 13,
+  "count": 4,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/ranthambore/",
+  "name": "RANTHAMBORE",
+  "slug": "ranthambore",
+  "yoast_head_json": {
+   "title": "RANTHAMBORE Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/ranthambore/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "RANTHAMBORE Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/ranthambore/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/ranthambore/",
+      "url": "https://indiauncharted.com/destination/ranthambore/",
+      "name": "RANTHAMBORE Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/ranthambore/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/ranthambore/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RANTHAMBORE"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 32,
+  "count": 4,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/ranthombore/",
+  "name": "RANTHOMBORE",
+  "slug": "ranthombore",
+  "yoast_head_json": {
+   "title": "RANTHOMBORE Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/ranthombore/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "RANTHOMBORE Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/ranthombore/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/ranthombore/",
+      "url": "https://indiauncharted.com/destination/ranthombore/",
+      "name": "RANTHOMBORE Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/ranthombore/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/ranthombore/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RANTHOMBORE"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 24,
+  "count": 7,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/rishikesh/",
+  "name": "RISHIKESH",
+  "slug": "rishikesh",
+  "yoast_head_json": {
+   "title": "RISHIKESH Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/rishikesh/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "RISHIKESH Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/rishikesh/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/rishikesh/",
+      "url": "https://indiauncharted.com/destination/rishikesh/",
+      "name": "RISHIKESH Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/rishikesh/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/rishikesh/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RISHIKESH"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 47,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/sarchu/",
+  "name": "SARCHU",
+  "slug": "sarchu",
+  "yoast_head_json": {
+   "title": "SARCHU Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/sarchu/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "SARCHU Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/sarchu/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/sarchu/",
+      "url": "https://indiauncharted.com/destination/sarchu/",
+      "name": "SARCHU Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/sarchu/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/sarchu/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SARCHU"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 46,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/sariska/",
+  "name": "SARISKA",
+  "slug": "sariska",
+  "yoast_head_json": {
+   "title": "SARISKA Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/sariska/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "SARISKA Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/sariska/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/sariska/",
+      "url": "https://indiauncharted.com/destination/sariska/",
+      "name": "SARISKA Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/sariska/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/sariska/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SARISKA"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 37,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/sonamarg/",
+  "name": "SONAMARG",
+  "slug": "sonamarg",
+  "yoast_head_json": {
+   "title": "SONAMARG Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/sonamarg/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "SONAMARG Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/sonamarg/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/sonamarg/",
+      "url": "https://indiauncharted.com/destination/sonamarg/",
+      "name": "SONAMARG Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/sonamarg/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/sonamarg/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SONAMARG"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 35,
+  "count": 5,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/srinagar/",
+  "name": "SRINAGAR",
+  "slug": "srinagar",
+  "yoast_head_json": {
+   "title": "SRINAGAR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/srinagar/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "SRINAGAR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/srinagar/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/srinagar/",
+      "url": "https://indiauncharted.com/destination/srinagar/",
+      "name": "SRINAGAR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/srinagar/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/srinagar/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SRINAGAR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 44,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/tal-chhapar/",
+  "name": "TAL CHHAPAR",
+  "slug": "tal-chhapar",
+  "yoast_head_json": {
+   "title": "TAL CHHAPAR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/tal-chhapar/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "TAL CHHAPAR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/tal-chhapar/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/tal-chhapar/",
+      "url": "https://indiauncharted.com/destination/tal-chhapar/",
+      "name": "TAL CHHAPAR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/tal-chhapar/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/tal-chhapar/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "TAL CHHAPAR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 19,
+  "count": 8,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/udaipur/",
+  "name": "UDAIPUR",
+  "slug": "udaipur",
+  "yoast_head_json": {
+   "title": "UDAIPUR Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/udaipur/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "UDAIPUR Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/udaipur/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/udaipur/",
+      "url": "https://indiauncharted.com/destination/udaipur/",
+      "name": "UDAIPUR Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/udaipur/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/udaipur/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UDAIPUR"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 16,
+  "count": 4,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/varanasi/",
+  "name": "VARANASI",
+  "slug": "varanasi",
+  "yoast_head_json": {
+   "title": "VARANASI Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/varanasi/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "VARANASI Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/varanasi/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/varanasi/",
+      "url": "https://indiauncharted.com/destination/varanasi/",
+      "name": "VARANASI Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/varanasi/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/varanasi/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "VARANASI"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": 38,
+  "count": 1,
+  "description": "",
+  "link": "https://indiauncharted.com/destination/yusmarg/",
+  "name": "YUSMARG",
+  "slug": "yusmarg",
+  "yoast_head_json": {
+   "title": "YUSMARG Archives - India Uncharted",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://indiauncharted.com/destination/yusmarg/",
+   "og_locale": "en_US",
+   "og_type": "article",
+   "og_title": "YUSMARG Archives - India Uncharted",
+   "og_url": "https://indiauncharted.com/destination/yusmarg/",
+   "og_site_name": "India Uncharted",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "CollectionPage",
+      "@id": "https://indiauncharted.com/destination/yusmarg/",
+      "url": "https://indiauncharted.com/destination/yusmarg/",
+      "name": "YUSMARG Archives - India Uncharted",
+      "isPartOf": {
+       "@id": "https://indiauncharted.com/#website"
+      },
+      "breadcrumb": {
+       "@id": "https://indiauncharted.com/destination/yusmarg/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://indiauncharted.com/destination/yusmarg/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://indiauncharted.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "YUSMARG"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://indiauncharted.com/#website",
+      "url": "https://indiauncharted.com/",
+      "name": "India Uncharted",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://indiauncharted.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     }
+    ]
+   }
+  }
+ }
+]

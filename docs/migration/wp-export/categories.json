@@ -1,0 +1,18 @@
+[
+ {
+  "id": 1,
+  "count": 10,
+  "description": "Your blog category",
+  "link": "https://indiauncharted.com/category/blog/",
+  "name": "Blog",
+  "slug": "blog"
+ },
+ {
+  "id": 2,
+  "count": 0,
+  "description": "",
+  "link": "https://indiauncharted.com/category/uncategorized/",
+  "name": "Uncategorized",
+  "slug": "uncategorized"
+ }
+]

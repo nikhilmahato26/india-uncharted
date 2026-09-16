@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+!.env.example
+/src/generated
+# Imported client photographs are content and ship with the deploy;
+# anything uploaded through the CMS at runtime does not.
+/public/media/uploads/
+.impeccable/decision

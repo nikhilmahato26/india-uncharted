@@ -1,0 +1,178 @@
+# Running your website
+
+This is for whoever looks after indiauncharted.com day to day. It assumes no technical background. You don't need a developer for anything in this guide.
+
+**Two things to know first.**
+
+1. Everything you change in the admin panel is safe, and it appears on the live site within seconds. If something looks wrong, change it back — nothing is lost.
+2. Never ask anyone to "edit the database directly". Everything on the site has a screen in the admin panel, and that screen keeps the site consistent.
+
+---
+
+## Signing in
+
+Go to **indiauncharted.com/admin** and sign in with your email and password.
+
+Change your password the first time you sign in: **Your account** in the bottom-left corner. Changing your password signs you out on every other device, which is exactly what you want if a laptop ever goes missing.
+
+If you forget your password, ask a super admin to set a new one for you (Users → Reset password).
+
+---
+
+## The menu, screen by screen
+
+### Dashboard
+
+Where you land. New enquiries, what's live, what still needs attention, and what changed recently. The "Needs attention" list is the shortest path to a tidy site.
+
+### Enquiries
+
+Every enquiry from the website. Open one and you get the traveller's details, what they asked about, and buttons to reply by WhatsApp, phone or email — already filled in with their name and reference.
+
+Move each enquiry along its **stage** as you work it: New → Contacted → Quoted → Confirmed → Completed, or Lost. Add **notes** so whoever picks it up next knows what was said. Travellers never see the notes.
+
+An email also goes out to you the moment an enquiry arrives, so you don't have to watch this screen.
+
+### Destinations
+
+Every place you plan journeys through. Each one becomes a travel-guide page.
+
+- **Name** is what travellers call it. **Byline** is the epithet, like "The Blue City".
+- **URL** is the web address. Change it and the old address keeps working automatically — a redirect is created for you.
+- Fill in **Best time**, **How to reach** and **Travel tips** honestly. Specific beats general: a traveller can tell the difference.
+- **Beyond the obvious** puts the place in the offbeat section on the homepage.
+
+### Regions
+
+The groups destinations belong to. A region only appears on the site once it has published destinations, so a region you're not selling yet stays hidden.
+
+### Journeys
+
+Your multi-day routes, retreats, courses and motorcycle expeditions. Motorcycle journeys automatically live under /bike-tours.
+
+- **Highlights**, **What's included** and **Not included** take one line each.
+- **Quote only** is on by default and shows "Price on request". Only switch it off if you're genuinely happy to publish a starting price.
+- Don't name a hotel unless the stay is actually confirmed — write the standard of accommodation instead.
+
+### Experiences
+
+Half-day and full-day things: walks, food trails, cycle rides, the desert evening. Each one can be attached to a destination, which is how it appears on that destination's page.
+
+### Travel guide
+
+Guides and journal entries. Both live under /travel-guide. The **excerpt** is what shows on cards and, if you leave the SEO description empty, in Google.
+
+### Services
+
+Transfers, and anything else you offer alongside journeys. The fleet lives here.
+
+### Pages
+
+About, Contact, Plan My Journey, and the legal pages. The legal pages are **drafts** until you paste in real text — the site simply doesn't link to them until then.
+
+### FAQs
+
+Questions and answers you can attach to any destination, journey or page. Write the question the way a traveller would ask it, and answer it properly: that answer is what search engines read.
+
+### Guest stories
+
+Reviews. **A story cannot be published until someone ticks the verification box** — confirming it's a real guest who agreed to it being published. This is deliberate. The two stories imported from the old site are unverified, so they're not showing.
+
+### Media
+
+Every image on the site.
+
+- **Alt text** describes the picture for blind visitors and for search engines. "Camels crossing a dune at sunset near Jaisalmer" — not "image1". The library shows you which images are still missing it.
+- **Licence** is a promise that you have the right to publish the image. Images brought over from the old site are marked "not confirmed" until you say otherwise.
+- An image used on a page can't be deleted until you replace it there — so nothing ever disappears from a live page by accident.
+
+### SEO manager
+
+- **Defaults** and **title patterns** decide how titles read when a page doesn't set its own. `{name}` is replaced by the page's name.
+- **Verification and analytics** take only the code each service gives you (like `G-XXXXXXX`), never a whole script.
+- **Health report** lists every published page with what's missing.
+- **Keywords** shows what each page is trying to be found for, and warns when two pages chase the same phrase — which splits your traffic between them.
+- **Redirects** keeps old addresses working. Every address from the old WordPress site is already in here.
+
+Each page also has its own **SEO tab**, with a Google preview and a list of checks. Those checks are advice, not a score, and nothing on this site promises a ranking.
+
+### Seasonal notices
+
+For when something can't be travelled: a monsoon, a closed pass, an off-season. Write the notice now, switch it on when it applies, switch it off after. A notice on one journey never appears anywhere else.
+
+### Site settings
+
+Your business details — phone, email, address, social links, logo. These feed the header, the footer, the contact page and the information search engines read about you.
+
+**WhatsApp:** the WhatsApp buttons across the site appear only once you put a number in the WhatsApp field. It's empty right now because nobody has confirmed that +91 80059 67178 is on WhatsApp.
+
+### Activity
+
+Who changed what, and when. Useful when something looks different and nobody remembers touching it.
+
+### Users
+
+Who can sign in.
+
+- **Editor** writes and edits, but can't publish or delete.
+- **Admin** does everything with content, enquiries, redirects and settings.
+- **Super admin** also manages users and the verification codes.
+
+Give people the smallest role that lets them do their job.
+
+---
+
+## How editing works
+
+1. Open the thing you want to change.
+2. Edit it. **Save** keeps your changes.
+3. **Preview** opens the real page with your unpublished changes visible — only you see it.
+4. **Status** decides whether it's live: Draft (nobody sees it), Published (live), Archived (retired, kept for the record).
+
+The **publish switch** in a list takes effect immediately. A **checkbox inside a form** waits for you to press Save. That difference is deliberate throughout.
+
+---
+
+## Things the site will not let you do
+
+These are on purpose, and each one protects you:
+
+- Publish a guest story nobody has verified.
+- Delete an image that's still on a page.
+- Publish a page while signed in as an Editor.
+- Save a web address that's already in use, or one the site itself needs.
+- Create a redirect loop.
+- Show a price where none has been set — it says "Price on request" instead.
+
+---
+
+## Before the new site goes live
+
+A short list that needs you, not a developer:
+
+1. **Confirm the logo** and send the original file (a vector, `.svg` or `.ai`).
+2. **Say whether +91 80059 67178 is on WhatsApp.**
+3. **Verify the two guest stories**, or send us real reviews to use.
+4. **Confirm the claims** currently held back: "24/7 support", "strong hospitality partnerships", "sustainable and responsible travel practices", and the transfers page's "100% Verified".
+5. **Confirm two place names** we corrected: Jispa (the old site said "jaispa") and Khichan ("khivhan").
+6. **Photography:** confirm you have the right to publish the images brought over from the old site. Five of them have filenames suggesting they were AI-generated — those should be replaced with real photographs of the real places.
+7. **Nine photographs are doing two jobs.** The same picture stands for two different pages, so a visitor sees Jodhpur's food walk and Jodhpur's city tour under one image. Send one photograph per page for these:
+   - the Jaisalmer AI image, used on the two yoga courses, the Golden City journey and the Jaisalmer sightseeing day
+   - the two wellness AI images, used on four journal articles between them
+   - Agra (place) and the Agra walking tour · Gulmarg and the Kashmir Paradise journey
+   - Incredible India and the Educational Group journey · Spiritual India and the Goa yoga article
+   - Udaipur's two walking tours · Jodhpur's two walking tours
+   Until then each page still shows a real photograph — just not one of its own.
+8. **Two journey photographs are not photographs of journeys:** a car brochure shot and two contact-sheet collages. They break the frame the rest of the site keeps.
+9. **Write the legal pages** (Privacy, Terms, Cookies), or send us approved text.
+10. **Write meta descriptions** for the pages that have none — the health report lists them.
+11. **Audit the old WordPress users.** There's an account called `saragamhospitaludaipur` with author access to your current site.
+
+---
+
+## If something goes wrong
+
+- **A page looks broken.** Check whether it's Draft. If it is, that's the site doing its job.
+- **A change isn't showing.** Reload. If it still isn't there, check you pressed Save and that the status is Published.
+- **You deleted something by mistake.** Tell your developer before adding it again — the activity log records what it was.
+- **Enquiries stop arriving by email.** They're still being saved; check the Enquiries screen, and ask your developer to check the email settings.
