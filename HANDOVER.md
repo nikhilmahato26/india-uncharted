@@ -164,9 +164,21 @@ A short list that needs you, not a developer:
    - Udaipur's two walking tours · Jodhpur's two walking tours
    Until then each page still shows a real photograph — just not one of its own.
 8. **Two journey photographs are not photographs of journeys:** a car brochure shot and two contact-sheet collages. They break the frame the rest of the site keeps.
-9. **Write the legal pages** (Privacy, Terms, Cookies), or send us approved text.
-10. **Write meta descriptions** for the pages that have none — the health report lists them.
-11. **Audit the old WordPress users.** There's an account called `saragamhospitaludaipur` with author access to your current site.
+9. **Facts for each destination.** None of the 35 place pages say when to go, how to get there or how long to stay — the old site never did. Send these in your own words and they'll appear in each page's fact strip. We haven't guessed them: October to March suits a desert tour, not a tiger reserve that closes in the monsoon.
+10. **A few lines for pages that have no words of their own:** the 6 region pages, 17 travel-style and experience pages, and 15 places with no introduction (Jaipur, Srinagar, Rishikesh, Pahalgam, Sonamarg, Sariska, Chandigarh, Nubra Valley, Pangong Lake, Jispa, Sarchu, Tal Chhapar, Khichan, Yusmarg, Doodhpathri).
+11. **One sentence is wrong on the Kashmir Nature & Relaxation Family Tour.** Its best-time text ends "comfortable for sightseeing and desert activities" — copied from the Jaisalmer tour on the old site. Edit it under Journeys → that tour → Best time.
+12. **Pages competing with each other in Google.** Decide whether to merge, rename or keep:
+    - the 200 Hour Yoga Teacher Training Course and the Rishikesh Yoga Teacher Training Tour — both 28 days in Rishikesh
+    - the two travel-guide articles "Yoga Holiday in India… in Goa" and "Why a Yoga Holiday in Goa…"
+    - the 6-day and 7-day Kashmir honeymoon packages, which now show the same name. Calling the 7-day one "Kashmir Honeymoon Package with Sonamarg" would match its route.
+13. **Better photos already in your library** — your choice, nothing has been swapped:
+    - Jaipur Cycle Tour: there's a photo of a cyclist in front of the Hawa Mahal, instead of cyclists on a country lane
+    - Gulmarg: a real photo of the Gulmarg gondola, instead of the purple-sky one
+    - Amritsar: the Golden Temple, instead of the border ceremony
+    - The article "Why a Yoga Holiday in Goa…" currently shows a photo taken in Varanasi
+14. **Old website graphics you can delete** from Media: two banners with "Crafted Journeys, Unforgettable Memories" written on them, a clip-art suitcase, three tiny icons, a patterned background and a world-map background. None is used anywhere.
+15. **Write the legal pages** (Privacy, Terms, Cookies), or send us approved text.
+16. **Audit the old WordPress users.** There's an account called `saragamhospitaludaipur` with author access to your current site.
 
 ---
 

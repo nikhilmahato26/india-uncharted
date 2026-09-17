@@ -44,7 +44,7 @@ Phases 0–7 are built and running against a local Postgres. `npm run build` pro
 | 5 — CMS | **Done** | 9 entity types through one registry: list, editor, publish, reorder, duplicate, delete, preview (Draft Mode), media library, settings, users, activity |
 | 6 — SEO manager | **Done** | Global defaults, title patterns, per-entity SEO tab with Google preview and checks, keyword map with cannibalisation warnings, health report, redirect manager with a 404 log |
 | 7 — Lead generation | **Done** | Contextual enquiry dialog, Plan My Journey, honeypot + timing + rate limit, email adapter, inbox with pipeline, notes and assignment |
-| 8 — Content pass | **Not started** | Needs the client: meta descriptions, alt text, destination facts, verified reviews, legal text |
+| 8 — Content pass | **In progress** | Everything that doesn't need the client is done — see *Phase 8* below. Waiting on the client for destination facts, region and category intros, verified reviews, image licences and legal text |
 | 9 — QA & launch | **Partly** | Gates green locally; still to do: Lighthouse, full axe pass, staging deploy, DNS cutover, Search Console |
 
 **Verified so far**
@@ -80,6 +80,22 @@ An independent review of the built site returned "ship with fixes" and 16 defect
 | CMS: "Hello, India", `SITE_INDEXABLE` in owner copy, counter counting the fallback, tickless checkboxes, duplicated status badge, unlabelled icons, raw `bike_tour`, "1 images", "India Uncharted login user", SEO nav below the fold | All fixed; the activity log now reads in sentences (`src/lib/admin/audit-text.ts`) |
 
 Not acted on, with reasons: the four homepage headlines the reviewer read as AI-written are the client's own brief copy, pinned; the sidebar-height and dev-badge findings were artefacts of full-page screenshots of a dev build; the "images without alt text" figure does link to a filtered media library. Nine photographs stand for two pages each — that is the client's content, now item 7 of the handover checklist.
+
+**Phase 8 — 17 September 2026**
+
+Content decisions live in `docs/content/*.json` (reviewable in git); scripts in `scripts/content/` apply them. Every script dry-runs by default, only fills empty fields, and is safe to run again. The Neon database was backed up to `backups/` first.
+
+| Work | Result |
+|---|---|
+| Search descriptions | 96 written from each record's own copy and real links; no prices, "best", certifications or claims. 0 pages now lack one (was 100 records / 17 pages on the gate) |
+| Focus keywords | 115 assigned, none shared, checked against every keyword already in the database |
+| Alt text | 109 written by looking at each photograph; a place is named only where the picture shows it. 0 images left without |
+| Import bug: wrong heroes | `uploadKey()` dropped the file extension, so `1-1.webp` (journey photo) and `1-1.png` (car) merged — five pages showed cars. Four more fell back to a shared AI collage. Fixed in the importer (tested), and `repair-heroes.mts` restored the 10 original photos from the live site, guarded to change only heroes still holding the wrong image |
+| Imported text | 3 descriptions with literal `&amp;` repaired; 4 best-time texts had lost their line breaks, restored without rewording; a new `seasonSummary()` shows the actual months in the fact strip instead of "Ideal flying seasons:" |
+| Empty hubs | 4 categories with nothing in them set to draft (Food & Culture, Photography, Wellness, Wildlife themes); they return when content is tagged |
+| Found, left for the client | A copied sentence ("desert activities" on a Kashmir tour); two near-duplicate yoga products and articles; two Kashmir packages with the same displayed name; destination facts the old site never had |
+
+Verified after a fresh build: page gate clean on 119 pages, 131/131 redirects, lint and types clean, 33 unit tests.
 
 **Known gaps**
 

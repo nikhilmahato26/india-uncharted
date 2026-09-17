@@ -7,21 +7,18 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import type { NavItem } from "@/lib/content/nav";
-import type { MediaSource } from "@/lib/content/media";
 import { cn } from "@/lib/cn";
 import { buttonClasses } from "@/components/ui/button";
 
 type Props = {
   items: NavItem[];
-  logo: MediaSource | null;
-  logoLight: MediaSource | null;
   cta: { label: string; href: string };
   phone: { href: string; display: string } | null;
 };
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-export function SiteHeader({ items, logo, logoLight, cta, phone }: Props) {
+export function SiteHeader({ items, cta, phone }: Props) {
   const pathname = usePathname();
   const overlayRoute = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
@@ -84,7 +81,6 @@ export function SiteHeader({ items, logo, logoLight, cta, phone }: Props) {
   }, []);
 
   const activeMega = items.find((i) => i.kind === "mega" && i.label === openMenu);
-  const logoMedia = transparent ? logoLight ?? logo : logo;
 
   return (
     <>
@@ -122,18 +118,14 @@ export function SiteHeader({ items, logo, logoLight, cta, phone }: Props) {
         />
         <div className="relative container-folio flex h-[4.5rem] items-center justify-between gap-6 lg:h-20">
           <Link href="/" className="relative -my-2 flex shrink-0 items-center py-2" aria-label="India Uncharted — home">
-            {logoMedia ? (
-              <Image
-                src={logoMedia.src}
-                alt="India Uncharted"
-                width={logoMedia.width}
-                height={logoMedia.height}
-                priority
-                className="h-10 w-auto lg:h-12"
-              />
-            ) : (
-              <span className="font-display text-title">India Uncharted</span>
-            )}
+            <Image
+              src="/logo.png"
+              alt="India Uncharted"
+              width={1536}
+              height={1024}
+              priority
+              className="h-10 w-auto lg:h-12 bg-white rounded-full p-1"
+            />
           </Link>
 
           <nav aria-label="Main" className="hidden lg:block">
@@ -211,7 +203,7 @@ export function SiteHeader({ items, logo, logoLight, cta, phone }: Props) {
         </AnimatePresence>
       </header>
 
-      <MobileDrawer open={drawer} onClose={() => setDrawer(false)} items={items} cta={cta} phone={phone} logo={logo} />
+      <MobileDrawer open={drawer} onClose={() => setDrawer(false)} items={items} cta={cta} phone={phone} />
     </>
   );
 }
@@ -300,14 +292,12 @@ function MobileDrawer({
   items,
   cta,
   phone,
-  logo,
 }: {
   open: boolean;
   onClose: () => void;
   items: NavItem[];
   cta: { label: string; href: string };
   phone: { href: string; display: string } | null;
-  logo: MediaSource | null;
 }) {
   const reduce = useReducedMotion();
   const titleId = useId();
@@ -336,7 +326,7 @@ function MobileDrawer({
             <p id={titleId} className="sr-only">
               Menu
             </p>
-            {logo ? <Image src={logo.src} alt="India Uncharted" width={logo.width} height={logo.height} className="h-10 w-auto" /> : null}
+            <Image src="/logo.png" alt="India Uncharted" width={1536} height={1024} className="h-10 w-auto bg-white rounded-full p-1" />
             <button ref={closeRef} type="button" onClick={onClose} className="flex size-11 items-center justify-center" aria-label="Close menu">
               <X className="size-6" strokeWidth={1.5} />
             </button>

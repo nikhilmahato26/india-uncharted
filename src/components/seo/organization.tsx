@@ -21,7 +21,8 @@ export function OrganizationJsonLd({ settings }: { settings: SiteSettingsView })
             name: settings.businessName,
             url: SITE_URL,
             ...(settings.tagline ? { description: settings.tagline } : {}),
-            ...(settings.logo ? { logo: absoluteUrl(settings.logo.src), image: absoluteUrl(settings.logo.src) } : {}),
+            logo: absoluteUrl("/logo.png"),
+            image: absoluteUrl("/logo.png"),
             ...(settings.phoneE164 ? { telephone: settings.phoneE164 } : {}),
             ...(settings.email ? { email: settings.email } : {}),
             ...(hasAddress

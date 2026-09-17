@@ -27,6 +27,8 @@ const PHRASES: Record<string, string> = {
   "media.delete": "deleted the image",
   "enquiry.note": "added a note to the enquiry",
   "enquiry.assign": "assigned the enquiry",
+  "content.pass": "ran the content pass",
+  "media.alt": "wrote alt text for images",
 };
 
 const ENTITY_WORDS: Record<string, string> = { SeasonalNotice: "notice", SiteSettings: "site settings", SeoSettings: "SEO settings", CustomMetaTag: "meta tag" };

@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { FactRow, Inscription, RouteLine, Section, SectionHead } from "@/components/site/primitives";
 import { ArticleCard, DestinationCard, ExperienceCard, JourneyCard } from "@/components/site/cards";
-import { dedupeMeta } from "@/lib/content/cards";
+import { dedupeMeta, seasonSummary } from "@/lib/content/cards";
 import { wholeRows } from "@/lib/rows";
 import { RichText } from "@/components/richtext/render";
 import { FaqBlock } from "@/components/site/faq-block";
@@ -19,11 +19,7 @@ import { LinkButton } from "@/components/ui/button";
 import { RidgeRule } from "@/components/brand/marks";
 
 /** Fact cells hold a phrase, not a paragraph; the full text keeps its own section. */
-function shortFact(value: string | null): string | null {
-  if (!value) return null;
-  const first = value.split(/[.\n]/)[0]!.trim();
-  return first.length > 64 ? `${first.slice(0, 61).trimEnd()}…` : first;
-}
+
 
 const KIND_LABEL: Record<string, string> = {
   JOURNEY: "Private journey",
@@ -45,7 +41,7 @@ export function JourneyTemplate({ journey: j, settings }: { journey: JourneyPage
     { label: "Duration", value: j.durationText },
     { label: "Tour type", value: j.tourType ?? KIND_LABEL[j.kind] },
     { label: "Travel style", value: j.styles.map((s) => s.name).join(", ") || null },
-    { label: "Best time", value: shortFact(j.bestTime) },
+    { label: "Best time", value: seasonSummary(j.bestTime) },
   ];
 
   const bike = j.bike;

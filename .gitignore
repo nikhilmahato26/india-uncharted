@@ -46,3 +46,6 @@ next-env.d.ts
 # anything uploaded through the CMS at runtime does not.
 /public/media/uploads/
 .impeccable/decision
+
+# Database dumps contain account hashes and enquiries — never committed.
+/backups/

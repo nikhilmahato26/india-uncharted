@@ -12,6 +12,12 @@ export type MediaState = { ok: true; count: number } | { ok: false; error: strin
 const MAX_BYTES = 12 * 1024 * 1024;
 const ACCEPTED = ["image/jpeg", "image/png", "image/webp", "image/avif", "image/gif"];
 
+/** Vercel and other serverless hosts mount the project read-only; only /tmp is writable. */
+function isReadOnlyDisk(err: unknown): boolean {
+  const code = (err as { code?: string } | null)?.code;
+  return code === "EROFS" || code === "EACCES" || (err instanceof Error && /read-only file system/i.test(err.message));
+}
+
 /** Uploads are processed server-side: rotated, capped at 2400px and re-encoded. */
 export async function uploadMedia(_prev: MediaState, formData: FormData): Promise<MediaState> {
   try {
@@ -42,6 +48,11 @@ export async function uploadMedia(_prev: MediaState, formData: FormData): Promis
   } catch (err) {
     if (err instanceof AuthError) return { ok: false, error: err.message };
     console.error("upload failed", err);
+    // A preview host has no writable disk. Say so, rather than let the CMS look
+    // broken to someone who was only trying to add a photograph.
+    if (isReadOnlyDisk(err)) {
+      return { ok: false, error: "This preview can't store new images yet. Everything else saves normally, and uploads will work once the site is on its own hosting." };
+    }
     return { ok: false, error: "That upload didn't work. Try one image at a time." };
   }
 }

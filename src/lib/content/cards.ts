@@ -128,6 +128,31 @@ export function displayName(name: string): string {
     .trim();
 }
 
+const MONTH = "(?:january|february|march|april|may|june|july|august|september|october|november|december)";
+const SEASON = new RegExp(`\\b(${MONTH})\\s+(?:to|–|-)\\s+(${MONTH})\\b`, "gi");
+
+/**
+ * A fact strip holds one short line, and a best-time paragraph often opens with a
+ * preamble ("Ideal flying seasons:") that says nothing on its own. The months are
+ * the fact, so the strip shows the ranges the client wrote, in their order, and
+ * falls back to the opening sentence only when there are none.
+ */
+export function seasonSummary(value: string | null | undefined, max = 64): string | null {
+  if (!value?.trim()) return null;
+  const title = (m: string) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase();
+  const ranges = [...new Set([...value.matchAll(SEASON)].map((m) => `${title(m[1]!)} to ${title(m[2]!)}`))];
+  if (ranges.length) {
+    let line = ranges[0]!;
+    for (const r of ranges.slice(1)) {
+      if (`${line} · ${r}`.length > max) break;
+      line = `${line} · ${r}`;
+    }
+    return line;
+  }
+  const first = value.split(/[.\n]/)[0]!.trim();
+  return first.length > max ? `${first.slice(0, max - 3).trimEnd()}…` : first;
+}
+
 /** Words that appear in almost every travel label and so prove nothing about overlap. */
 const GENERIC_META_WORDS = new Set(["tour", "tours", "journey", "journeys", "package", "packages", "demand", "with", "from", "india"]);
 

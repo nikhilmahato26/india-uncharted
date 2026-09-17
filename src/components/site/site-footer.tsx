@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Navigation } from "@/lib/content/nav";
 import { formatPhone, telHref } from "@/lib/phone";
-import { SunMark } from "@/components/brand/marks";
 import { LinkButton } from "@/components/ui/button";
 
 const SOCIAL_LABEL: Record<string, string> = {
@@ -93,11 +92,7 @@ export function SiteFooter({ nav }: { nav: Navigation }) {
             </ul>
           ) : null}
           <div className="flex items-start lg:col-span-3 lg:justify-end">
-            {settings.logoLight ? (
-              <Image src={settings.logoLight.src} alt="India Uncharted" width={settings.logoLight.width} height={settings.logoLight.height} className="h-12 w-auto opacity-90" />
-            ) : (
-              <SunMark className="size-10 text-gold-300" />
-            )}
+            <Image src="/logo.png" alt="India Uncharted" width={1536} height={1024} className="h-12 w-auto opacity-90 bg-white rounded-full p-1" />
           </div>
         </div>
 

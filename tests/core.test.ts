@@ -3,7 +3,7 @@ import { slugify, uniqueSlug, isReservedSlug, SLUG_PATTERN } from "@/lib/slug";
 import { toE164, formatPhone, whatsappHref, whatsappMessage } from "@/lib/phone";
 import { normalizePath, normalizeTarget, collapseChains, createsLoop } from "@/lib/redirects";
 import { can } from "@/lib/auth/rbac";
-import { dedupeMeta, displayName, durationText, priceText } from "@/lib/content/cards";
+import { dedupeMeta, displayName, durationText, priceText, seasonSummary } from "@/lib/content/cards";
 import { summarize } from "@/lib/richtext/text";
 
 describe("slugs", () => {
@@ -112,6 +112,14 @@ describe("card formatting", () => {
     expect(dedupeMeta(["Private journey", "8 days · 7 nights", "Private / On Demand"])).toEqual(["Private journey", "8 days · 7 nights"]);
     expect(dedupeMeta(["Bike tour", "12 days", "Group Tour"])).toEqual(["Bike tour", "12 days", "Group Tour"]);
     expect(dedupeMeta([null, "  ", "Retreat"])).toEqual(["Retreat"]);
+  });
+
+  it("summarises a best-time paragraph as its month ranges", () => {
+    expect(seasonSummary("Ideal flying seasons:\nMarch to June September to November\nThese months provide stable weather.")).toBe("March to June · September to November");
+    expect(seasonSummary("March to June → Pleasant weather & greenery October to November → Autumn colours December to February → Snowfall")).toBe("March to June · October to November · December to February");
+    expect(seasonSummary("Goa is a year-round destination, but the ideal period is:\nOctober to March\nPleasant temperatures")).toBe("October to March");
+    expect(seasonSummary("Any time of year suits a city walk.")).toBe("Any time of year suits a city walk");
+    expect(seasonSummary(null)).toBeNull();
   });
 
   it("cuts an intro on a sentence, never mid-word", () => {

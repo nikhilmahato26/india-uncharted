@@ -16,11 +16,9 @@ export default async function GonePage() {
   const { settings } = nav;
   return (
     <>
-      <Suspense fallback={<HeaderFallback items={nav.header} logo={settings.logo} cta={settings.defaultCta} />}>
+      <Suspense fallback={<HeaderFallback items={nav.header} cta={settings.defaultCta} />}>
         <SiteHeader
           items={nav.header}
-          logo={settings.logo}
-          logoLight={settings.logoLight}
           cta={settings.defaultCta}
           phone={settings.phoneE164 ? { href: telHref(settings.phoneE164), display: formatPhone(settings.phoneE164) } : null}
         />

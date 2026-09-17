@@ -137,9 +137,17 @@ const decode = (s: string) => cheerio.load(`<p>${s}</p>`)("p").text().replace(/\
 const mediaByKey = new Map<string, string>(); // normalised upload key → Media.id
 
 /** ".../uploads/2026/05/jodq-300x200.jpg" → "2026/05/jodq" */
+/**
+ * The key an upload is remembered by: its path without WordPress's size suffix
+ * or "-scaled". The extension stays. On the old site 1-1.webp and 1-1.png in the
+ * same month folder were different photographs (a journey hero and a car on the
+ * transfers page); a key without the extension merged them and five pages got a
+ * car. An optimiser's double extension (photo.jpg.webp) is the same image and
+ * folds back onto the original.
+ */
 function uploadKey(url: string): string | null {
-  const m = url.match(/wp-content\/uploads\/(.+?)(?:-\d{2,4}x\d{2,4})?(?:-scaled)?\.(?:jpe?g|png|webp|gif)(?:\.(?:jpe?g|png|webp))?$/i);
-  return m ? m[1]!.toLowerCase() : null;
+  const m = url.match(/wp-content\/uploads\/(.+?)(?:-\d{2,4}x\d{2,4})?(?:-scaled)?\.(jpe?g|png|webp|gif)(?:\.(?:jpe?g|png|webp))?$/i);
+  return m ? `${m[1]}.${m[2]}`.toLowerCase().replace(/\.jpeg$/, ".jpg") : null;
 }
 
 function meaningfulAlt(alt: string | null | undefined): string {
