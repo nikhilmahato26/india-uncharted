@@ -119,6 +119,10 @@ export function SeoSettingsForm({
                 defaultChecked={Boolean(values.consentRequired)}
                 label="Ask visitors for consent before analytics loads (required for visitors in the EU and UK)"
               />
+              <p className="mt-2 text-caption text-ink-3">
+                Analytics runs only on the live site, never on previews. With consent switched on, nothing is loaded for a visitor until they press Accept, and a browser
+                sending a “do not track” privacy signal is treated as having declined.
+              </p>
             </div>
           </fieldset>
         </Panel>

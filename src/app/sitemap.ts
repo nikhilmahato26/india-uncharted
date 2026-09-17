@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { db } from "@/lib/db";
-import { SITE_INDEXABLE, absoluteUrl, routes } from "@/lib/site";
+import { FIXED_PAGE_KEYS, LEGAL_PAGES, SITE_INDEXABLE, absoluteUrl, routes } from "@/lib/site";
+import { docToPlainText } from "@/lib/richtext/text";
 
 /**
  * Only published, indexable, self-canonical content. Drafts, archived records,
@@ -13,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const indexable = { status: "PUBLISHED" as const, OR: [{ seo: null }, { seo: { robotsIndex: true, canonicalUrl: null } }] };
 
   const [pages, regions, destinations, journeys, experiences, articles, services, styles, themes] = await Promise.all([
-    db.page.findMany({ where: { status: "PUBLISHED" }, select: { key: true, slug: true, updatedAt: true } }),
+    db.page.findMany({ where: { status: "PUBLISHED" }, select: { key: true, slug: true, updatedAt: true, body: true } }),
     db.region.findMany({ where: indexable, select: { slug: true, updatedAt: true } }),
     db.destination.findMany({ where: indexable, select: { slug: true, updatedAt: true } }),
     db.journey.findMany({ where: indexable, select: { slug: true, kind: true, updatedAt: true } }),
@@ -48,8 +49,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entry(routes.services(), new Date(), 0.5),
   ];
 
+  // Only pages that have a route of their own; a legal page only once it has text.
+  const legalKeys: string[] = LEGAL_PAGES.map((l) => l.key);
   const cmsPages = pages
-    .filter((p) => !["home", "about", "contact", "plan-my-journey"].includes(p.key))
+    .filter((p) => FIXED_PAGE_KEYS.has(p.key) && !["home", "about", "contact", "plan-my-journey"].includes(p.key))
+    .filter((p) => !legalKeys.includes(p.key) || docToPlainText(p.body).trim().length > 0)
     .map((p) => entry(`/${p.slug}`, p.updatedAt, 0.4, "yearly"));
 
   return [

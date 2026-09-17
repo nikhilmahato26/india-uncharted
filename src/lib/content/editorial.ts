@@ -2,7 +2,8 @@ import "server-only";
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/lib/db";
 import { isRichDoc, type RichDoc } from "@/lib/richtext/types";
-import { docOutline } from "@/lib/richtext/text";
+import { docOutline, docToPlainText } from "@/lib/richtext/text";
+import { LEGAL_PAGES } from "@/lib/site";
 import { TAGS, TRAVEL_TAGS } from "./tags";
 import { mediaSelect, toMedia } from "./media";
 import { visibleStatuses } from "./visibility";
@@ -113,6 +114,18 @@ export async function getPage(key: string) {
     seo: toSeo(p.seo),
     updatedAt: p.updatedAt.toISOString(),
   };
+}
+
+/**
+ * Legal pages that are published and actually contain text. A published but
+ * empty policy is treated as not live: no footer link, no sitemap entry, a 404.
+ */
+export async function liveLegalPageKeys(): Promise<string[]> {
+  "use cache";
+  cacheTag(TAGS.pages);
+  cacheLife("days");
+  const rows = await db.page.findMany({ where: { status: "PUBLISHED", key: { in: LEGAL_PAGES.map((l) => l.key) } }, select: { key: true, body: true } });
+  return rows.filter((r) => docToPlainText(r.body).trim().length > 0).map((r) => r.key);
 }
 
 /** Which legal / optional pages are live, so the footer never links to a draft. */

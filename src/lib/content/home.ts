@@ -1,4 +1,5 @@
 import "server-only";
+import { DISCOVER_DEFAULT_SLUGS } from "@/lib/sections/defaults";
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/lib/db";
 import { TAGS, TRAVEL_TAGS } from "./tags";
@@ -29,15 +30,12 @@ export async function getHomeData() {
 
   // Discover India: the brief names Rajasthan, Kerala, Ladakh and Goa. We show
   // the region-level places that exist and have content, in that spirit.
-  const discoverSlugs = ["jaisalmer", "goa", "kashmir", "leh", "udaipur", "varanasi"];
-  const discoverRows = await db.destination.findMany({
-    where: { status, slug: { in: discoverSlugs }, heroId: { not: null } },
-    select: destinationCardSelect,
-  });
-  const discover = discoverSlugs
-    .map((s) => discoverRows.find((r) => r.slug === s))
-    .filter((r): r is NonNullable<typeof r> => Boolean(r))
-    .map(toDestinationCard);
+  // Every published place with a photograph, so a section can show whichever
+  // places the owner chose in the homepage editor, in the order they chose them.
+  const destinationsBySlug = Object.fromEntries(
+    (await db.destination.findMany({ where: { status, heroId: { not: null } }, select: destinationCardSelect })).map((r) => [r.slug, toDestinationCard(r)]),
+  );
+  const discover = pickDestinations(destinationsBySlug, DISCOVER_DEFAULT_SLUGS);
 
   const featuredJourneys = (
     await db.journey.findMany({
@@ -81,7 +79,12 @@ export async function getHomeData() {
     experiences: await db.experience.count({ where: { status } }),
   };
 
-  return { discover, featuredJourneys, offbeat, bikeTours, experiences, articles, regions, styles, themes, testimonials, counts };
+  return { discover, destinationsBySlug, featuredJourneys, offbeat, bikeTours, experiences, articles, regions, styles, themes, testimonials, counts };
 }
 
 export type HomeData = Awaited<ReturnType<typeof getHomeData>>;
+
+/** Places in the given order, skipping any that are unpublished or have no photograph. */
+export function pickDestinations<T>(bySlug: Record<string, T>, slugs: string[]): T[] {
+  return slugs.map((slug) => bySlug[slug]).filter((d): d is T => Boolean(d));
+}

@@ -11,6 +11,7 @@ import {
   FileText,
   Footprints,
   Gauge,
+  House,
   History,
   Image as ImageIcon,
   Inbox,
@@ -39,6 +40,7 @@ import { cn } from "@/lib/cn";
 
 const ICONS: Record<string, LucideIcon> = {
   gauge: Gauge,
+  house: House,
   inbox: Inbox,
   "map-pin": MapPin,
   map: Map,

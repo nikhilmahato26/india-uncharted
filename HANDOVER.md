@@ -31,7 +31,20 @@ Every enquiry from the website. Open one and you get the traveller's details, wh
 
 Move each enquiry along its **stage** as you work it: New → Contacted → Quoted → Confirmed → Completed, or Lost. Add **notes** so whoever picks it up next knows what was said. Travellers never see the notes.
 
-An email also goes out to you the moment an enquiry arrives, so you don't have to watch this screen.
+Once your email details are set up, an email also goes out to you the moment an enquiry arrives, so you don't have to watch this screen. Until then, check here — nothing is lost either way.
+
+### Homepage
+
+Every block of the homepage, in the order visitors see them.
+
+- **Edit** opens a block: its headline, text, photograph, buttons and where they link. Only the things that actually change the page are there.
+- For **Discover India** you choose the places yourself — the first is the large photograph. Only published places that have a photograph can be picked.
+- The **arrows** move a block up or down. The **Shown / Hidden** switch takes it off the page without deleting it.
+- **Add a section** puts a new block at the bottom, hidden, so a half-finished one never appears on the site. Fill it in, then switch it on.
+- Links can go to a page on the site (starting with `/`) or a full `https://` address — nothing else is accepted.
+- The background colours aren't editable. They're set so neighbouring sections never clash.
+
+Changes appear on the site as soon as you save. Editors can change words and pictures; moving, hiding and adding blocks needs an Admin.
 
 ### Destinations
 
@@ -68,7 +81,10 @@ Transfers, and anything else you offer alongside journeys. The fleet lives here.
 
 ### Pages
 
-About, Contact, Plan My Journey, and the legal pages. The legal pages are **drafts** until you paste in real text — the site simply doesn't link to them until then.
+About, Contact, Plan My Journey, and the legal pages.
+
+- **Privacy Policy, Terms & Conditions and Cookie Policy** are drafts until you paste in your approved text and switch them to Published. The moment one is published *with text in it*, it appears at its address (for example `/privacy-policy`), gets a link in the footer and is added to the sitemap. A policy published with nothing in it stays hidden, so there's never an empty legal page. The "Last updated" date on the page is the date you last saved it.
+- These pages, and About, Contact and Plan My Journey, have **fixed addresses** — the URL field can't be changed for them, because the site is built around those addresses.
 
 ### FAQs
 
@@ -90,6 +106,7 @@ Every image on the site.
 
 - **Defaults** and **title patterns** decide how titles read when a page doesn't set its own. `{name}` is replaced by the page's name.
 - **Verification and analytics** take only the code each service gives you (like `G-XXXXXXX`), never a whole script.
+- **Cookie consent.** Once you add a Google Analytics, Tag Manager or Meta Pixel code, visitors to the live site see a small "Cookies, briefly" notice naming exactly what you use. Nothing is loaded for a visitor until they press Accept; Decline is just as easy. Their choice is remembered for six months, and a **Cookie settings** link in the footer lets anyone change their mind. Browsers that send a privacy signal are treated as having declined. Analytics never runs on the preview site, so your own testing won't skew the numbers. Publish your Cookie Policy page and the notice links to it automatically.
 - **Health report** lists every published page with what's missing.
 - **Keywords** shows what each page is trying to be found for, and warns when two pages chase the same phrase — which splits your traffic between them.
 - **Redirects** keeps old addresses working. Every address from the old WordPress site is already in here.

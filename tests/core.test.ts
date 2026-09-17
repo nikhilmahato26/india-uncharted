@@ -5,6 +5,9 @@ import { normalizePath, normalizeTarget, collapseChains, createsLoop } from "@/l
 import { can } from "@/lib/auth/rbac";
 import { dedupeMeta, displayName, durationText, priceText, seasonSummary } from "@/lib/content/cards";
 import { summarize } from "@/lib/richtext/text";
+import { cloudinarySignature } from "@/lib/media/store";
+import { isSafeLink, sectionTitle } from "@/lib/sections/editor";
+import { consentCookie, hasTrackers, isTrackerCookie, parseConsent, trackerNames } from "@/lib/analytics";
 
 describe("slugs", () => {
   it("makes URL-safe slugs from product names", () => {
@@ -141,5 +144,69 @@ describe("card formatting", () => {
     expect(durationText(8, 7)).toBe("8 days · 7 nights");
     expect(durationText(1, null)).toBe("1 days");
     expect(durationText(null, null, "Long-term")).toBe("Long-term");
+  });
+});
+
+describe("cloudinary", () => {
+  it("signs requests the way Cloudinary's documentation does", () => {
+    // The worked example from Cloudinary's upload API authentication docs.
+    const params = { eager: "w_400,h_300,c_pad|w_260,h_200,c_crop", public_id: "sample_image", timestamp: 1315060510 };
+    expect(cloudinarySignature(params, "abcd")).toBe("bfd09f95f331f558cbd1320e67aa8d488770583e");
+  });
+
+  it("leaves empty values out of the signature", () => {
+    expect(cloudinarySignature({ public_id: "a", folder: "", timestamp: 1 }, "s")).toBe(cloudinarySignature({ public_id: "a", timestamp: 1 }, "s"));
+  });
+});
+
+describe("homepage editor", () => {
+  it("accepts links to this site and to real web addresses", () => {
+    for (const ok of ["/plan-my-journey", "/journeys?style=wildlife", "#faq", "https://indiauncharted.com/about", "mailto:indiaunchartedtravel@gmail.com", "tel:+918005967178"]) {
+      expect(isSafeLink(ok), ok).toBe(true);
+    }
+  });
+
+  it("refuses links that could run code or leave for another host unnoticed", () => {
+    for (const bad of ["javascript:alert(1)", "JavaScript:alert(1)", "data:text/html,<script>", "//evil.example", "vbscript:msgbox", "plan-my-journey", ""]) {
+      expect(isSafeLink(bad), bad).toBe(false);
+    }
+  });
+
+  it("names a section by its own heading, or by what it is", () => {
+    expect(sectionTitle("HERO", { titleLead: "India,", titleAccent: "beyond the obvious." })).toBe("India, beyond the obvious.");
+    expect(sectionTitle("JOURNEY_GRID", { heading: "Ride India" })).toBe("Ride India");
+    expect(sectionTitle("REGION_CAROUSEL", {})).toBe("Explore India by region");
+  });
+});
+
+describe("analytics consent", () => {
+  it("reads a stored choice for the current version only", () => {
+    expect(parseConsent("theme=dark; iu_consent=granted.v1; other=1")).toBe("granted");
+    expect(parseConsent("iu_consent=denied.v1")).toBe("denied");
+    // An older version means the trackers changed since they chose: ask again.
+    expect(parseConsent("iu_consent=granted.v0")).toBeNull();
+    expect(parseConsent("iu_consent=maybe.v1")).toBeNull();
+    expect(parseConsent("xiu_consent=granted.v1")).toBeNull();
+    expect(parseConsent("")).toBeNull();
+  });
+
+  it("writes a cookie that reads back the same, secure on https", () => {
+    const cookie = consentCookie("granted", true);
+    expect(parseConsent(cookie.split(";")[0]!)).toBe("granted");
+    expect(cookie).toContain("SameSite=Lax");
+    expect(cookie).toContain("Secure");
+    expect(consentCookie("denied", false)).not.toContain("Secure");
+  });
+
+  it("names only the trackers actually configured", () => {
+    const none = { ga4Id: null, gtmId: null, metaPixelId: null, consentRequired: true };
+    expect(hasTrackers(none)).toBe(false);
+    expect(trackerNames({ ...none, ga4Id: "G-ABC" })).toEqual(["Google Analytics"]);
+    expect(trackerNames({ ...none, gtmId: "GTM-ABC", metaPixelId: "123" })).toEqual(["Google Analytics", "Meta Pixel"]);
+  });
+
+  it("clears tracker cookies and nothing else", () => {
+    for (const name of ["_ga", "_ga_ABC123", "_gid", "_gat_UA", "_fbp", "_fbc"]) expect(isTrackerCookie(name), name).toBe(true);
+    for (const name of ["iu_session", "iu_consent", "__Secure-next-auth", "_gallery"]) expect(isTrackerCookie(name), name).toBe(false);
   });
 });

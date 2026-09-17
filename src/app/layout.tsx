@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang="en-IN" className={`${cormorant.variable} ${dmSans.variable}`} data-scroll-behavior="smooth">
       <body>
         <div hidden dangerouslySetInnerHTML={{ __html: `<!--\nTHESIS: Every place is a painted folio — a framed scene, a narrow border band, its story written in the margin; refuses full-bleed-photo-plus-floating-cards travel templates.
 OWN-WORLD: Wasli ivory ground; malachite forest and Indian-red terracotta as whole page fields; lamp-black ink; gold only as hairline rules and pearl bands. Square nested frames: margin → band → gold rule → plate. Cormorant display, DM Sans text.

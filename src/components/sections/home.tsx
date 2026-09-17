@@ -5,6 +5,7 @@ import type { MediaSource } from "@/lib/content/media";
 import type { SiteSettingsView } from "@/lib/content/settings";
 import { parseSectionProps, type SectionProps, type SectionTypeKey } from "@/lib/sections/schemas";
 import { cn } from "@/lib/cn";
+import { pickDestinations } from "@/lib/content/home";
 import { wholeRows } from "@/lib/rows";
 import { routes } from "@/lib/site";
 import { formatPhone, telHref } from "@/lib/phone";
@@ -124,7 +125,13 @@ export function HomeSection({ type, props: raw, ctx }: { type: string; props: un
 
     case "DESTINATION_GRID": {
       const p = props as SectionProps<"DESTINATION_GRID">;
-      const pool = p.source === "offbeat" ? data.offbeat : p.source === "discover" ? data.discover : data.discover;
+      // "manual" is what the homepage editor saves: the owner's own places, in their order.
+      const pool =
+        p.source === "offbeat"
+          ? data.offbeat
+          : p.source === "manual" && p.slugs?.length
+            ? pickDestinations(data.destinationsBySlug, p.slugs)
+            : data.discover;
       const items = pool.slice(0, p.limit);
       if (items.length < p.minItems) return null;
 

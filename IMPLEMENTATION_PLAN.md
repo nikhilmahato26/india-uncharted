@@ -99,9 +99,11 @@ Verified after a fresh build: page gate clean on 119 pages, 131/131 redirects, l
 
 **Known gaps**
 
-- Section reordering exists in the data model and the homepage renders from it, but the admin has no drag-and-drop page builder yet — sections are seeded and editable in the database
+- ~~No homepage editor~~ — built 17 September at `/admin/homepage`: per-section forms limited to fields that visibly change the page, reorder, show/hide, add (hidden by default), delete; saved props validated by the same schema the renderer uses; links restricted to site paths and http(s)/mailto/tel. "Discover India" is now owner-chosen (it was a list hard-coded in `home.ts`). Reordering is by arrows, not drag-and-drop
+- ~~Legal pages had no routes~~ — built 17 September: `/privacy-policy`, `/terms-and-conditions`, `/cookie-policy` render the client's text; a page is live only when published *and* non-empty (404, no footer link and no sitemap entry otherwise). Also closed a latent bug: renaming a fixed page's slug in the CMS (About, Contact…) auto-created a 301 to a non-existent route; those addresses are now refused server-side
+- ~~Analytics fields saved but never loaded~~ — built 17 September: GA4, GTM and Meta Pixel load only after consent (or with consent switched off), only on the indexable live site; consent is a client-read first-party cookie so pages stay static; Global Privacy Control is honoured as a decline; withdrawing consent clears tracker cookies. Verified in a browser with Google and Meta requests blocked and counted: zero requests before a choice, after Decline, after withdrawal and under GPC
 - Newsletter storage exists; no provider is wired, and the section stays hidden
-- Cloudinary adapter is stubbed behind `MEDIA_PROVIDER`; local disk storage is active
+- ~~Cloudinary adapter is stubbed~~ — built 17 September: signed uploads and deletes without an SDK, duplicate check before storing, compensating delete if the database write fails; verified against the client's account through the CMS
 - Search is Postgres `ILIKE`, which is exact and fast at this catalogue size; a `tsvector` index is the upgrade when content grows
 - No e2e (Playwright) suite in the repo yet; the flows above were verified by script during the build
 

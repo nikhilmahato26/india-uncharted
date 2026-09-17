@@ -4,7 +4,7 @@ import { revalidatePath, updateTag } from "next/cache";
 import { db } from "@/lib/db";
 import { assertCapability, AuthError } from "@/lib/auth/session";
 import { recordAudit } from "@/lib/audit";
-import { deleteStoredMedia, storeMedia } from "@/lib/media/store";
+import { deleteStoredMedia, sha256, storeMedia } from "@/lib/media/store";
 import { TAGS } from "@/lib/content/tags";
 
 export type MediaState = { ok: true; count: number } | { ok: false; error: string } | null;
@@ -31,13 +31,21 @@ export async function uploadMedia(_prev: MediaState, formData: FormData): Promis
       if (file.size > MAX_BYTES) return { ok: false, error: `${file.name} is larger than 12MB. Export it smaller and try again.` };
 
       const buffer = Buffer.from(await file.arrayBuffer());
-      const stored = await storeMedia(buffer, { filename: file.name, folder: "uploads" });
-      const existing = await db.media.findUnique({ where: { sha256: stored.sha256 }, select: { id: true } });
-      if (existing) continue; // same image already in the library
+      // Checked before storing: with Cloudinary, storing first would leave a copy in
+      // the account every time someone re-uploaded a picture already in the library.
+      const existing = await db.media.findUnique({ where: { sha256: sha256(buffer) }, select: { id: true } });
+      if (existing) continue;
 
-      await db.media.create({
-        data: { ...stored, altText: "", title: file.name.replace(/\.[a-z0-9]+$/i, ""), folder: "uploads", licence: "OWNED" },
-      });
+      const stored = await storeMedia(buffer, { filename: file.name, folder: "uploads" });
+      try {
+        await db.media.create({
+          data: { ...stored, altText: "", title: file.name.replace(/\.[a-z0-9]+$/i, ""), folder: "uploads", licence: "OWNED" },
+        });
+      } catch (err) {
+        // The file is stored but has no record: remove it rather than orphan it.
+        await deleteStoredMedia(stored).catch(() => {});
+        throw err;
+      }
       count++;
     }
 
@@ -51,7 +59,7 @@ export async function uploadMedia(_prev: MediaState, formData: FormData): Promis
     // A preview host has no writable disk. Say so, rather than let the CMS look
     // broken to someone who was only trying to add a photograph.
     if (isReadOnlyDisk(err)) {
-      return { ok: false, error: "This preview can't store new images yet. Everything else saves normally, and uploads will work once the site is on its own hosting." };
+      return { ok: false, error: "This copy of the site can't store images on its own disk. Everything else saves normally; ask your developer to switch image storage to Cloudinary." };
     }
     return { ok: false, error: "That upload didn't work. Try one image at a time." };
   }

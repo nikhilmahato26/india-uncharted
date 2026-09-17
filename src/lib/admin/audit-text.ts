@@ -28,6 +28,12 @@ const PHRASES: Record<string, string> = {
   "enquiry.note": "added a note to the enquiry",
   "enquiry.assign": "assigned the enquiry",
   "content.pass": "ran the content pass",
+  "section.update": "edited the homepage section",
+  "section.move": "moved the homepage section",
+  "section.show": "switched on the homepage section",
+  "section.hide": "hid the homepage section",
+  "section.create": "added a homepage section",
+  "section.delete": "deleted the homepage section",
   "media.alt": "wrote alt text for images",
 };
 

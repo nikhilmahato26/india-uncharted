@@ -29,7 +29,9 @@ The values are in `.env.production.local` on the build machine.
 | `NEXT_PUBLIC_SITE_URL` | the vercel.app URL | `https://indiauncharted.com` |
 | `SITE_INDEXABLE` | `false` | `true` — this is the only switch that lets Google in |
 | `PREVIEW_PASSWORD` | a 12-character password | **delete it**, or the live site asks for a password |
-| `MEDIA_PROVIDER` | `local` | `cloudinary` if the client will upload images (see below) |
+| `MEDIA_PROVIDER` | `cloudinary` | `cloudinary` |
+| `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | the client's account | same |
+| `CLOUDINARY_FOLDER` | optional, defaults to `india-uncharted` | same |
 | `EMAIL_PROVIDER` | `log` | `smtp`, plus `SMTP_URL`, `EMAIL_FROM`, `EMAIL_TO_ENQUIRIES` |
 
 `SHADOW_DATABASE_URL` is only for `prisma migrate dev` on a developer machine. It is
@@ -56,15 +58,23 @@ pg_dump "$LOCAL_URL" --no-owner --no-privileges --no-comments -Fp -f dump.sql
 psql "$TARGET_URL" -v ON_ERROR_STOP=1 -f dump.sql
 ```
 
-## Two things that do not work on Vercel
+## Images
 
-1. **CMS image uploads.** `MEDIA_PROVIDER=local` writes to `public/media/uploads`, and
-   Vercel's filesystem is read-only and thrown away between requests. Existing photos
-   are fine — they are part of the build. If the client needs to add images, either
-   finish the Cloudinary adapter in `src/lib/media/store.ts` or host on a box with a
-   disk (Railway, Render, Fly).
-2. **The 60-second redirect cache** (`src/lib/redirect-store.ts`) is per instance, so a
-   redirect edited in the CMS can take up to a minute to appear on every instance.
+Photographs imported from the old site ship with the code (`public/media/wp`).
+Anything uploaded through the CMS goes to Cloudinary under `india-uncharted/`,
+through the same processing as before (rotated, capped at 2400px, re-encoded,
+blur placeholder), so the two kinds behave identically on the page. Only this
+account's image path is allowed through the Next image optimiser
+(`images.remotePatterns` in `next.config.ts`).
+
+Local development shares the preview's database, so it must use `cloudinary`
+too: an image stored on a laptop's disk would appear on the preview as a
+broken picture.
+
+## One thing to know on Vercel
+
+The 60-second redirect cache (`src/lib/redirect-store.ts`) is per instance, so a
+redirect edited in the CMS can take up to a minute to appear on every instance.
 
 ## At launch
 

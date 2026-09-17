@@ -1,12 +1,12 @@
 import "server-only";
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/lib/db";
-import { routes } from "@/lib/site";
+import { LEGAL_PAGES, routes } from "@/lib/site";
 import { TAGS, TRAVEL_TAGS } from "./tags";
 import { listCategories, listRegions } from "./travel";
 import { journeyCardSelect, toJourneyCard } from "./cards";
 import { getSiteSettings } from "./settings";
-import { publishedPageKeys } from "./editorial";
+import { liveLegalPageKeys, publishedPageKeys } from "./editorial";
 
 export type NavLink = { label: string; href: string; meta?: string | null };
 export type MegaColumn = { heading: string; href?: string; links: NavLink[] };
@@ -24,12 +24,13 @@ export async function getNavigation() {
   cacheTag(...TRAVEL_TAGS, TAGS.nav, TAGS.settings, TAGS.pages, TAGS.services);
   cacheLife("days");
 
-  const [regions, styles, themes, settings, pageKeys] = await Promise.all([
+  const [regions, styles, themes, settings, pageKeys, legalKeys] = await Promise.all([
     listRegions(),
     listCategories("TRAVEL_STYLE"),
     listCategories("EXPERIENCE_THEME"),
     getSiteSettings(),
     publishedPageKeys(),
+    liveLegalPageKeys(),
   ]);
   const featured = await db.journey.findFirst({
     where: { status: "PUBLISHED", isFeatured: true, heroId: { not: null } },
@@ -79,11 +80,7 @@ export async function getNavigation() {
     { kind: "link", label: "About", href: routes.about() },
   ];
 
-  const legal = [
-    { key: "privacy-policy", label: "Privacy Policy", href: "/privacy-policy" },
-    { key: "terms-and-conditions", label: "Terms & Conditions", href: "/terms-and-conditions" },
-    { key: "cookie-policy", label: "Cookie Policy", href: "/cookie-policy" },
-  ].filter((l) => pageKeys.includes(l.key));
+  const legal = LEGAL_PAGES.filter((l) => legalKeys.includes(l.key));
 
   const footer: MegaColumn[] = [
     {

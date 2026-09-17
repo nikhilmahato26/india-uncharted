@@ -15,6 +15,7 @@ export const ADMIN_NAV: AdminNavGroup[] = [
   {
     heading: "Content",
     items: [
+      { label: "Homepage", href: "/admin/homepage", icon: "house" },
       { label: "Destinations", href: "/admin/destinations", icon: "map-pin" },
       { label: "Regions", href: "/admin/regions", icon: "map" },
       { label: "Journeys", href: "/admin/journeys", icon: "route" },

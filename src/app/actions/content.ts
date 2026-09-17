@@ -8,6 +8,7 @@ import { recordAudit, diffFields } from "@/lib/audit";
 import { getEntity, type EntityKey } from "@/lib/admin/registry";
 import { parseCustomJsonLd, seoSchema } from "@/lib/admin/fields";
 import { isReservedSlug, slugify, SLUG_PATTERN } from "@/lib/slug";
+import { FIXED_PAGE_KEYS } from "@/lib/site";
 import { normalizePath } from "@/lib/redirects";
 import { invalidateRedirectCache } from "@/lib/redirect-store";
 import { TAGS } from "@/lib/content/tags";
@@ -131,6 +132,11 @@ export async function saveEntity(key: EntityKey, id: string | null, _prev: SaveS
       const requested = String(data.slug ?? "").trim();
       let slug = requested ? slugify(requested) : (existing?.slug as string) || slugify(titleValue);
       if (!slug) return { ok: false, error: "This needs a name before it can be saved.", fieldErrors: { [def.titleField]: "Required." } };
+      // About, Contact, the legal pages and the rest have their own route. Renaming one
+      // would redirect its address to a page that doesn't exist, so the address is fixed.
+      if (def.key === "pages" && existing && FIXED_PAGE_KEYS.has(String(existing.key)) && slug !== existing.slug) {
+        return { ok: false, error: "This page's address is fixed.", fieldErrors: { slug: `“/${String(existing.slug)}” is built into the site and can't be changed.` } };
+      }
       if (!SLUG_PATTERN.test(slug)) return { ok: false, error: "That URL isn't valid.", fieldErrors: { slug: "Use lowercase letters, numbers and hyphens." } };
       if (isReservedSlug(slug)) return { ok: false, error: "That URL is reserved.", fieldErrors: { slug: `“${slug}” is used by the site itself. Choose another.` } };
 

@@ -9,6 +9,8 @@ import { PageHeader, Panel, Stat, StatusPill } from "@/components/admin/ui";
 import { LinkButton } from "@/components/ui/button";
 
 export const metadata = { title: "Dashboard" };
+// Behind a sign-in and always fresh from the database: allowed to block on navigation.
+export const instant = false;
 
 export default async function AdminDashboard() {
   const user = await requireUser();

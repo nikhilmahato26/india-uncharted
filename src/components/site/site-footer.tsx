@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CookieSettingsButton } from "@/components/site/cookie-settings-button";
 import Link from "next/link";
 import type { Navigation } from "@/lib/content/nav";
 import { formatPhone, telHref } from "@/lib/phone";
@@ -14,7 +15,7 @@ const SOCIAL_LABEL: Record<string, string> = {
   tripadvisor: "Tripadvisor",
 };
 
-export function SiteFooter({ nav }: { nav: Navigation }) {
+export function SiteFooter({ nav, cookieSettings = false }: { nav: Navigation; cookieSettings?: boolean }) {
   const { settings, footer, legal } = nav;
   const address = [settings.address.line1, settings.address.line2, [settings.address.city, settings.address.postalCode].filter(Boolean).join(" "), settings.address.region, settings.address.country]
     .filter(Boolean)
@@ -98,7 +99,7 @@ export function SiteFooter({ nav }: { nav: Navigation }) {
 
         <div className="mt-10 flex flex-col gap-3 text-caption text-paper/65 sm:flex-row sm:items-center sm:justify-between">
           <p>{settings.copyright}</p>
-          {legal.length ? (
+          {legal.length || cookieSettings ? (
             <ul className="flex flex-wrap gap-x-5">
               {legal.map((l) => (
                 <li key={l.href}>
@@ -107,6 +108,11 @@ export function SiteFooter({ nav }: { nav: Navigation }) {
                   </Link>
                 </li>
               ))}
+              {cookieSettings ? (
+                <li>
+                  <CookieSettingsButton className="inline-flex min-h-10 items-center hover:text-paper hover:underline" />
+                </li>
+              ) : null}
             </ul>
           ) : null}
         </div>
