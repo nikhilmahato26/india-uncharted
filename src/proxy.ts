@@ -4,27 +4,13 @@ import { normalizePath } from "@/lib/redirects";
 import { getRedirectMap, recordRedirectHit } from "@/lib/redirect-store";
 
 /**
- * 1. Preview gate — only while PREVIEW_PASSWORD is set, which it never is on the
- *    live domain. It keeps an unfinished site to the people it was sent to.
- * 2. Admin gate — an optimistic check only. Every admin page and server action
+ * 1. Admin gate — an optimistic check only. Every admin page and server action
  *    re-verifies the session against the database (lib/auth/session.ts).
- * 3. Redirects — resolved from the Redirect table with exact status codes,
+ * 2. Redirects — resolved from the Redirect table with exact status codes,
  *    so migrated WordPress URLs keep their search equity.
  */
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-
-  const previewPassword = process.env.PREVIEW_PASSWORD;
-  if (previewPassword && !hasPreviewPassword(request.headers.get("authorization"), previewPassword)) {
-    return new NextResponse("This preview is password-protected.", {
-      status: 401,
-      headers: {
-        "www-authenticate": 'Basic realm="India Uncharted preview", charset="UTF-8"',
-        "cache-control": "no-store",
-        "x-robots-tag": "noindex",
-      },
-    });
-  }
 
   if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
     const claims = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
@@ -76,24 +62,6 @@ export async function proxy(request: NextRequest) {
   return NextResponse.next({ request: { headers } });
 }
 
-/**
- * Any username, the password is what counts. Compared in constant time so the
- * answer cannot be found one character at a time.
- */
-function hasPreviewPassword(header: string | null, expected: string): boolean {
-  if (!header?.startsWith("Basic ")) return false;
-  let decoded: string;
-  try {
-    decoded = atob(header.slice(6).trim());
-  } catch {
-    return false;
-  }
-  const given = decoded.slice(decoded.indexOf(":") + 1);
-  if (given.length !== expected.length) return false;
-  let diff = 0;
-  for (let i = 0; i < expected.length; i++) diff |= given.charCodeAt(i) ^ expected.charCodeAt(i);
-  return diff === 0;
-}
 
 /** Self-contained so it never depends on the app rendering. Same palette as the site. */
 function gonePage() {

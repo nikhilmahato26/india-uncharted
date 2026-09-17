@@ -4,15 +4,20 @@ Written for whoever runs the deploy — you, or the next developer on this proje
 
 ## What the preview is
 
-A password-protected copy of the finished site on Vercel, reading a Neon Postgres
-database that holds the full imported content. It exists so the client can see and
-comment on the site before the domain moves. It is not the launch.
+A copy of the finished site on Vercel, reading a Neon Postgres database that holds
+the full imported content. It exists so the client can see and comment on the site
+before the domain moves. It is not the launch.
+
+Anyone with the link can open it — there is no password on it. `SITE_INDEXABLE=false`
+still keeps it out of Google (`robots.txt` disallows everything, every page carries
+`noindex`), but that only stops search engines finding it on their own; it does
+nothing once the link itself is shared.
 
 ## State
 
 | Piece | Where | Note |
 |---|---|---|
-| App | Vercel | Next 16, Node runtime, `proxy.ts` handles redirects and the preview gate |
+| App | Vercel | Next 16, Node runtime, `proxy.ts` handles redirects |
 | Database | Neon (`ep-shiny-glade-b5lk2lc8`, us-east-2) | Restored from the local dump: 36 destinations, 30 journeys, 12 experiences, 105 images, 129 redirects |
 | Images | `public/media/wp`, committed | 17 MB, served as static assets |
 | Secrets | `.env.production.local` (git-ignored) and the Vercel project | Never in a commit |
@@ -28,7 +33,6 @@ The values are in `.env.production.local` on the build machine.
 | `JWT_SECRET` | 48 random bytes, generated for this deploy | rotate — it signs admin sessions |
 | `NEXT_PUBLIC_SITE_URL` | the vercel.app URL | `https://indiauncharted.com` |
 | `SITE_INDEXABLE` | `false` | `true` — this is the only switch that lets Google in |
-| `PREVIEW_PASSWORD` | a 12-character password | **delete it**, or the live site asks for a password |
 | `MEDIA_PROVIDER` | `cloudinary` | `cloudinary` |
 | `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | the client's account | same |
 | `CLOUDINARY_FOLDER` | optional, defaults to `india-uncharted` | same |
@@ -79,10 +83,9 @@ redirect edited in the CMS can take up to a minute to appear on every instance.
 ## At launch
 
 1. Set `SITE_INDEXABLE=true` and `NEXT_PUBLIC_SITE_URL` to the real domain.
-2. Delete `PREVIEW_PASSWORD`.
-3. Point DNS at Vercel, then redeploy so the canonical URLs rebuild.
-4. Run `node scripts/check-redirects.mjs https://indiauncharted.com` — all 131 old URLs
+2. Point DNS at Vercel, then redeploy so the canonical URLs rebuild.
+3. Run `node scripts/check-redirects.mjs https://indiauncharted.com` — all 131 old URLs
    must still resolve in one hop.
-5. Submit `https://indiauncharted.com/sitemap.xml` in Search Console and keep the old
+4. Submit `https://indiauncharted.com/sitemap.xml` in Search Console and keep the old
    property until the redirects have been crawled.
 6. Rotate `JWT_SECRET` and change every admin password created during the preview.

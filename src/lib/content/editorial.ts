@@ -129,6 +129,28 @@ export async function liveLegalPageKeys(): Promise<string[]> {
 }
 
 /** Which legal / optional pages are live, so the footer never links to a draft. */
+/**
+ * The one photograph on the admin sign-in page: Jodhpur, where the client is
+ * based. Reuses the destination's own hero rather than a picture chosen only
+ * for this screen, so it stays true if the destination's photo ever changes.
+ * A missing or unpublished Jodhpur destination is not an error here — the
+ * page's own empty state (the sun mark) covers it.
+ */
+export async function getLoginMedia() {
+  "use cache";
+  cacheTag(TAGS.destinations, TAGS.media);
+  cacheLife("days");
+  const d = await db.destination.findFirst({
+    where: { slug: "jodhpur", status: "PUBLISHED" },
+    select: { name: true, latitude: true, longitude: true, hero: { select: mediaSelect } },
+  });
+  if (!d) return null;
+  return {
+    media: toMedia(d.hero, d.name),
+    caption: d.latitude != null && d.longitude != null ? `${d.name}, Rajasthan · ${d.latitude.toFixed(2)}°N ${d.longitude.toFixed(2)}°E` : `${d.name}, Rajasthan`,
+  };
+}
+
 export async function publishedPageKeys(): Promise<string[]> {
   "use cache";
   cacheTag(TAGS.pages);
