@@ -167,7 +167,13 @@ export async function getDestinationPage(slug: string) {
       whereToStay: true,
       updatedAt: true,
       parent: { select: { id: true, slug: true, name: true, status: true } },
-      children: { where: { status }, orderBy: { sortOrder: "asc" }, select: destinationCardSelect },
+      // A place big enough to have named sub-areas (North Goa, South Goa) shows what
+      // is in each one on the parent page, so the beaches are readable without a click.
+      children: {
+        where: { status },
+        orderBy: { sortOrder: "asc" },
+        select: { ...destinationCardSelect, highlights: { where: { kind: "PLACE_TO_VISIT" }, orderBy: { sortOrder: "asc" }, select: { title: true } } },
+      },
       highlights: { orderBy: { sortOrder: "asc" }, select: { id: true, kind: true, title: true, body: true, media: { select: mediaSelect } } },
       seo: { select: seoSelect },
     },
@@ -234,6 +240,7 @@ export async function getDestinationPage(slug: string) {
     },
     parent: d.parent && d.parent.status === "PUBLISHED" ? { slug: d.parent.slug, name: d.parent.name } : null,
     children: d.children.map(toDestinationCard),
+    areas: d.children.map((c) => ({ ...toDestinationCard(c), places: c.highlights.map((h) => h.title) })),
     highlights: d.highlights.map((h) => ({ ...h, media: toMedia(h.media, h.title) })),
     journeys,
     experiences,

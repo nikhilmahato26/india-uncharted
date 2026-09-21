@@ -218,8 +218,11 @@ export const experienceCardSelect = {
   slug: true,
   name: true,
   format: true,
+  location: true,
   duration: true,
   shortDescription: true,
+  quoteOnly: true,
+  priceFromInr: true,
   status: true,
   hero: { select: mediaSelect },
   destination: { select: { slug: true, name: true, status: true } },
@@ -233,11 +236,13 @@ export type ExperienceCard = {
   name: string;
   format: string;
   formatLabel: string;
+  location: string | null;
   duration: string | null;
   shortDescription: string | null;
   destination: { slug: string; name: string; published: boolean } | null;
   themes: { slug: string; name: string }[];
   hero: MediaSource | null;
+  priceText: string;
   isDraft: boolean;
 };
 
@@ -258,11 +263,13 @@ export function toExperienceCard(e: Prisma.ExperienceGetPayload<{ select: typeof
     name: e.name,
     format: e.format,
     formatLabel: FORMAT_LABELS[e.format] ?? "Experience",
+    location: e.location,
     duration: e.duration,
     shortDescription: e.shortDescription,
     destination: e.destination ? { slug: e.destination.slug, name: e.destination.name, published: e.destination.status === "PUBLISHED" } : null,
     themes: e.themes.map((t) => t.category),
     hero: toMedia(e.hero, e.name),
+    priceText: priceText(e.quoteOnly, e.priceFromInr),
     isDraft: e.status !== "PUBLISHED",
   };
 }

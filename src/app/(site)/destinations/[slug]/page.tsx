@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDestinationPage } from "@/lib/content/travel";
+import { featureFor } from "@/lib/content/destination-features";
 import { getSiteSettings } from "@/lib/content/settings";
 import { resolveMetadata } from "@/lib/seo/metadata";
 import { absoluteUrl, routes } from "@/lib/site";
@@ -15,6 +16,7 @@ import { FaqBlock } from "@/components/site/faq-block";
 import { EnquiryDialog } from "@/components/enquiry/enquiry-dialog";
 import { LinkButton } from "@/components/ui/button";
 import { PlanStrip } from "@/components/site/plan-strip";
+import { DestinationSections } from "@/components/site/destination-sections";
 
 import { db } from "@/lib/db";
 
@@ -47,6 +49,13 @@ export default async function DestinationPage({ params }: Props) {
   if (!d) notFound();
 
   const heading = d.seo.h1Override || d.name;
+  // Places with a large catalogue trade the two plain grids for one filterable
+  // list; everywhere else the template is unchanged.
+  const feature = featureFor(d.slug);
+  // The areas block already gives each child place a card of its own, so the
+  // "in and around" strip falls back to the region's other destinations.
+  const showChildren = !(feature?.areas && d.areas.length);
+  const nearbyCards = [...(showChildren ? d.children : []), ...d.nearby].slice(0, 4);
   const crumbs = [
     { label: "Destinations", href: routes.destinations() },
     ...(d.region ? [{ label: d.region.name, href: routes.region(d.region.slug) }] : []),
@@ -77,7 +86,11 @@ export default async function DestinationPage({ params }: Props) {
         actions={
           <>
             <EnquiryDialog label={`Plan a journey to ${d.name}`} context={{ entityType: "DESTINATION", entityId: d.id, entityName: d.name }} title={`Plan your ${d.name} journey`} />
-            {d.journeys.length ? (
+            {feature && d.journeys.length + d.experiences.length ? (
+              <LinkButton href="#packages" variant="secondary" size="lg">
+                See {d.journeys.length + d.experiences.length} packages &amp; experiences
+              </LinkButton>
+            ) : d.journeys.length ? (
               <LinkButton href="#journeys" variant="secondary" size="lg">
                 See {d.journeys.length} {d.journeys.length === 1 ? "journey" : "journeys"}
               </LinkButton>
@@ -126,7 +139,9 @@ export default async function DestinationPage({ params }: Props) {
         </Section>
       ) : null}
 
-      {d.experiences.length ? (
+      {feature ? <DestinationSections d={d} feature={feature} whatsappE164={settings.whatsappE164} /> : null}
+
+      {!feature && d.experiences.length ? (
         <Section tone="paper" labelledBy="experiences">
           <SectionHead id="experiences" title={`Things to do in ${d.name}`} action={{ label: "All experiences", href: routes.experiences() }} />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -165,7 +180,7 @@ export default async function DestinationPage({ params }: Props) {
         </Section>
       ) : null}
 
-      {d.journeys.length ? (
+      {!feature && d.journeys.length ? (
         <Section tone="paper" id="journeys" labelledBy="journeys-head">
           <SectionHead
             id="journeys-head"
@@ -225,11 +240,11 @@ export default async function DestinationPage({ params }: Props) {
         </Section>
       )}
 
-      {d.children.length || d.nearby.length ? (
+      {nearbyCards.length ? (
         <Section tone="paper" labelledBy="nearby">
-          <SectionHead id="nearby" title={d.children.length ? `In and around ${d.name}` : d.region ? `Also in ${d.region.name}` : `Near ${d.name}`} />
+          <SectionHead id="nearby" title={showChildren && d.children.length ? `In and around ${d.name}` : d.region ? `Also in ${d.region.name}` : `Near ${d.name}`} />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[...d.children, ...d.nearby].slice(0, 4).map((n) => (
+            {nearbyCards.map((n) => (
               <DestinationCard key={n.slug} destination={n} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 23vw" ratio="landscape" band="paper" clampTitle />
             ))}
           </div>
