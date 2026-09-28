@@ -31,7 +31,7 @@ The values are in `.env.production.local` on the build machine.
 |---|---|---|
 | `DATABASE_URL` | the Neon **pooled** URL | a production database |
 | `JWT_SECRET` | 48 random bytes, generated for this deploy | rotate — it signs admin sessions |
-| `NEXT_PUBLIC_SITE_URL` | the vercel.app URL | `https://indiauncharted.com` |
+| `NEXT_PUBLIC_SITE_URL` | the vercel.app URL | `https://www.indiauncharted.com` — the www host, not the apex |
 | `SITE_INDEXABLE` | `false` | `true` — this is the only switch that lets Google in |
 | `MEDIA_PROVIDER` | `cloudinary` | `cloudinary` |
 | `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | the client's account | same |
@@ -82,10 +82,15 @@ redirect edited in the CMS can take up to a minute to appear on every instance.
 
 ## At launch
 
-1. Set `SITE_INDEXABLE=true` and `NEXT_PUBLIC_SITE_URL` to the real domain.
-2. Point DNS at Vercel, then redeploy so the canonical URLs rebuild.
-3. Run `node scripts/check-redirects.mjs https://indiauncharted.com` — all 131 old URLs
-   must still resolve in one hop.
-4. Submit `https://indiauncharted.com/sitemap.xml` in Search Console and keep the old
-   property until the redirects have been crawled.
+1. Set `SITE_INDEXABLE=true` and `NEXT_PUBLIC_SITE_URL` to the real domain — the
+   **www** host, not the bare apex (`lib/site.ts` rewrites a bare apex to www
+   automatically, but set it right here rather than relying on that).
+2. Point DNS at Vercel (apex domain redirecting to www, or an A/ALIAS record on
+   the apex plus a CNAME on www — either way www is the one Vercel serves the
+   site from), then redeploy so the canonical URLs rebuild.
+3. Run `node scripts/check-redirects.mjs https://www.indiauncharted.com` — all 131 old
+   URLs must still resolve in one hop.
+4. Submit `https://www.indiauncharted.com/sitemap.xml` in Search Console as a www
+   URL-prefix property (not the apex), and keep the old property until the
+   redirects have been crawled.
 6. Rotate `JWT_SECRET` and change every admin password created during the preview.

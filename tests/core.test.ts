@@ -8,6 +8,7 @@ import { summarize } from "@/lib/richtext/text";
 import { cloudinarySignature } from "@/lib/media/store";
 import { isSafeLink, sectionTitle } from "@/lib/sections/editor";
 import { consentCookie, hasTrackers, isTrackerCookie, parseConsent, trackerNames } from "@/lib/analytics";
+import { canonicalSiteUrl } from "@/lib/site";
 
 describe("slugs", () => {
   it("makes URL-safe slugs from product names", () => {
@@ -208,5 +209,25 @@ describe("analytics consent", () => {
   it("clears tracker cookies and nothing else", () => {
     for (const name of ["_ga", "_ga_ABC123", "_gid", "_gat_UA", "_fbp", "_fbc"]) expect(isTrackerCookie(name), name).toBe(true);
     for (const name of ["iu_session", "iu_consent", "__Secure-next-auth", "_gallery"]) expect(isTrackerCookie(name), name).toBe(false);
+  });
+});
+
+describe("canonical site URL", () => {
+  it("forces a bare apex domain to www", () => {
+    expect(canonicalSiteUrl("https://indiauncharted.com")).toBe("https://www.indiauncharted.com");
+    expect(canonicalSiteUrl("https://indiauncharted.com/")).toBe("https://www.indiauncharted.com");
+    expect(canonicalSiteUrl("http://indiauncharted.travel")).toBe("http://www.indiauncharted.travel");
+  });
+
+  it("leaves anything with two dots alone, including two-part ccTLDs it can't tell from a subdomain", () => {
+    expect(canonicalSiteUrl("https://www.indiauncharted.com")).toBe("https://www.indiauncharted.com");
+    expect(canonicalSiteUrl("https://staging.indiauncharted.com")).toBe("https://staging.indiauncharted.com");
+    expect(canonicalSiteUrl("https://india-uncharted.vercel.app")).toBe("https://india-uncharted.vercel.app");
+    expect(canonicalSiteUrl("https://indiauncharted.co.in")).toBe("https://indiauncharted.co.in");
+  });
+
+  it("leaves localhost and malformed values alone", () => {
+    expect(canonicalSiteUrl("http://localhost:3000")).toBe("http://localhost:3000");
+    expect(canonicalSiteUrl("not-a-url")).toBe("not-a-url");
   });
 });

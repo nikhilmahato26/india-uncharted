@@ -1,6 +1,36 @@
 /** Public, non-secret site configuration. Safe to import anywhere. */
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/+$/, "");
+/**
+ * Forces the canonical host to its "www" form. robots.ts, sitemap.ts and every
+ * canonical/OG URL all read SITE_URL, so a bare apex domain typed into the env
+ * var — "indiauncharted.com" instead of "www.indiauncharted.com" — would make
+ * the apex the canonical host everywhere at once. This is the one place that
+ * decision is made, so it can't drift between the two files.
+ *
+ * Left alone: localhost, and anything that already has a subdomain (www,
+ * staging, the vercel.app preview host) — only a bare "label.tld" is rewritten.
+ *
+ * Known gap: two-part country-code TLDs (indiauncharted.co.in,
+ * indiauncharted.org.in) have two dots like a subdomain does and are left
+ * alone rather than guessed at — getting that right needs the public suffix
+ * list, not a regex. If the client's domain is one of these, set
+ * NEXT_PUBLIC_SITE_URL to the www form directly; this guard won't catch it.
+ */
+export function canonicalSiteUrl(raw: string): string {
+  const trimmed = raw.replace(/\/+$/, "");
+  let url: URL;
+  try {
+    url = new URL(trimmed);
+  } catch {
+    return trimmed;
+  }
+  const isBareApex = /^[a-z0-9-]+\.[a-z]{2,}$/i.test(url.hostname);
+  if (!isBareApex) return trimmed;
+  url.hostname = `www.${url.hostname}`;
+  return url.toString().replace(/\/+$/, "");
+}
+
+export const SITE_URL = canonicalSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000");
 
 /** Only production sets SITE_INDEXABLE=true; staging and local are always noindex. */
 export const SITE_INDEXABLE = process.env.SITE_INDEXABLE === "true";
