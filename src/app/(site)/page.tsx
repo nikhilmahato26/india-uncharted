@@ -10,7 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const page = await getPage("home");
   return resolveMetadata({
     kind: "PAGE",
-    name: page?.title ?? "India, Beyond the Obvious",
+    // The homepage is what brand searches land on, so its title leads with the name
+    // rather than the hero line. An editor's SEO title in the CMS still wins.
+    name: "India Uncharted: Private India Tours & Tailor-Made Holidays",
     path: "/",
     seo: page?.seo,
     description:

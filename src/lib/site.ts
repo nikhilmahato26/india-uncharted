@@ -30,10 +30,29 @@ export function canonicalSiteUrl(raw: string): string {
   return url.toString().replace(/\/+$/, "");
 }
 
-export const SITE_URL = canonicalSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000");
+/** The one public address. The apex redirects here, so this is the canonical host. */
+export const PRODUCTION_SITE_URL = "https://www.indiauncharted.com";
 
-/** Only production sets SITE_INDEXABLE=true; staging and local are always noindex. */
-export const SITE_INDEXABLE = process.env.SITE_INDEXABLE === "true";
+/**
+ * Vercel's own production deployment — the one www.indiauncharted.com serves.
+ * Preview deployments report "preview" and local builds report nothing, so
+ * both stay on the env vars below and remain noindex.
+ */
+const IS_PRODUCTION_DEPLOY = process.env.VERCEL_ENV === "production";
+
+/**
+ * Production always uses the www domain, whatever NEXT_PUBLIC_SITE_URL says: an
+ * env var pointing at the vercel.app host once sent every canonical, and the
+ * sitemap, there instead of to the real site.
+ */
+export const SITE_URL = IS_PRODUCTION_DEPLOY ? PRODUCTION_SITE_URL : canonicalSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000");
+
+/**
+ * Production is always indexable; elsewhere only an explicit SITE_INDEXABLE=true
+ * opens it up, so previews and local builds are always noindex. Production used
+ * to rely on that env var too, and with it unset robots.txt blocked all of Google.
+ */
+export const SITE_INDEXABLE = IS_PRODUCTION_DEPLOY || process.env.SITE_INDEXABLE === "true";
 
 export function absoluteUrl(path: string): string {
   if (/^https?:\/\//i.test(path)) return path;

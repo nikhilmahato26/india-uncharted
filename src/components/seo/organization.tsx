@@ -7,6 +7,10 @@ import { JsonLd } from "./json-ld";
  * address, the published phone and email, and the social profiles that exist.
  * No ratings, no awards, no invented service area claims.
  */
+
+/** Other ways people type the name; Google reads these for the site name and brand searches. */
+const ALTERNATE_NAMES = ["IndiaUncharted", "India Uncharted Tours", "India Uncharted Holidays"];
+
 export function OrganizationJsonLd({ settings }: { settings: SiteSettingsView }) {
   const address = settings.address;
   const hasAddress = Boolean(address.line1 || address.city);
@@ -19,6 +23,7 @@ export function OrganizationJsonLd({ settings }: { settings: SiteSettingsView })
             "@type": "TravelAgency",
             "@id": `${SITE_URL}/#organization`,
             name: settings.businessName,
+            alternateName: ALTERNATE_NAMES,
             url: SITE_URL,
             ...(settings.tagline ? { description: settings.tagline } : {}),
             logo: absoluteUrl("/logo.png"),
@@ -44,6 +49,7 @@ export function OrganizationJsonLd({ settings }: { settings: SiteSettingsView })
             "@id": `${SITE_URL}/#website`,
             url: SITE_URL,
             name: settings.businessName,
+            alternateName: ALTERNATE_NAMES,
             publisher: { "@id": `${SITE_URL}/#organization` },
             inLanguage: "en-IN",
             potentialAction: {
